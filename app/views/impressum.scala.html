@@ -1,0 +1,46 @@
+@()(implicit request: RequestHeader, messages: Messages)
+
+@mainNew("Dona - ForMe")() {
+    <div class="mt-5 mb-2 serif-text">
+
+            <h1 class="h1 text-justify serif-text"><b>@messages("imprint.title")</b></h1>
+        <div class="data-protection-paragraph">
+            <p class="text-left">@Html(messages("imprint.imprint"))</p>
+        </div>
+
+            <h4><b>@messages("imprint.rsa.title")</b></h4>
+            <div class="data-protection-paragraph">
+                <p class="text-left">@Html(messages("imprint.rsa.body"))</p>
+            </div>
+
+            <h4><b>@messages("imprint.responsibleDona.title")</b></h4>
+        <div class="data-protection-paragraph">
+            <p class="text-left">@Html(messages("imprint.responsibleDona.body"))</p>
+        </div>
+
+            <h4><b>@messages("imprint.responsibleCentralWebsite.title")</b></h4>
+        <div class="data-protection-paragraph">
+            <p class="text-left">@Html(messages("imprint.responsibleCentralWebsite.body"))</p>
+        </div>
+
+            <h4><b>@messages("imprint.liabilityDisclaimer.title")</b></h4>
+        <div class="data-protection-paragraph">
+            <p class="text-left">@Html(messages("imprint.liabilityDisclaimer.body"))</p>
+        </div>
+
+            <h4><b>@messages("imprint.copyright.title")</b></h4>
+        <div class="data-protection-paragraph">
+            <p class="text-left">@Html(messages("imprint.copyright.body"))</p>
+        </div>
+
+            <h4><b>@messages("imprint.photoCredits.title")</b></h4>
+        <div class="data-protection-paragraph">
+            <p class="text-left">@Html(messages("imprint.photoCredits.body"))</p>
+        </div>
+
+    </div>
+
+} {
+}{
+    @headerButtons()
+}

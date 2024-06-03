@@ -1,0 +1,47 @@
+@(description: String, image: String)(implicit request: RequestHeader, messages: Messages)
+
+<div class="modal-dialog modal-xl modalMaxWidth">
+    <div class="modal-content">
+        <div class="modal-header bgmain">
+            <h3 class="data-protection-headline">@Html(messages("feedback.graph.example.title"))</h3>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+
+            <div>
+                <div class="card-deck feedback-stats-deck">
+                    <div class="card top feedback-stats-card">
+                        <p class="insights-text">
+                            @Html(description)
+                        </p>
+                    </div>
+
+                </div>
+                <img src="@routes.Assets.at(image)" style="max-width:100%; max-height:100%">
+            </div>
+
+            <div class="d-flex justify-content-end align-items-center">
+                <button type="button" class="btn footer-backward-button consent-button" data-dismiss="modal">@messages("consent.buttons.close.caption")</button>
+
+            </div>
+        </div>
+    </div>
+
+    @showExplanationText(title: String, body: String) = {
+        <div class="top">
+            <h4 class="text-center font-weight-bold insights-header">@title</h4>
+        </div>
+        <div class="card-deck feedback-stats-deck">
+
+            <div class="card top feedback-stats-card">
+                <p class="insights-text text-center">
+                @body
+                </p>
+            </div>
+
+        </div>
+    }
+
+
+
+</div>

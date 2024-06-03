@@ -1,0 +1,15 @@
+@(title: Option[String] = None, previousLink: Option[String] = None, nextLink: Option[String] = None, nextCustomText: Option[String] = None)(extra: Html = Html(""))(implicit messages: Messages)
+
+@if(title.isDefined) {
+    <div class="align-content-center text-center mb-3"><h2>@title.get</h2></div>
+}
+<div class="row justify-content-center mx-0 flex-wrap-reverse">
+    @if(previousLink.isDefined) {
+        <a class="btn footer-backward-button" href="@previousLink.get">@messages("actions.previous")</a>
+    }
+    @if(nextLink.isDefined) {
+    <a class="btn footer-forward-button-margin" href="@nextLink.get">@nextCustomText.getOrElse(messages("actions.next"))</a>
+    }
+
+    @extra
+</div>

@@ -1,0 +1,31 @@
+@()(implicit request: RequestHeader, messages: Messages)
+
+@mainNew("Data Protection Policy")() {
+<div class="mt-5 mb-2 serif-text">
+    <h1 class="h1 text-justify serif-text"><b>@messages("data-protection.title")</b></h1>
+    <h4 class="data-protection-headline">@messages("data-protection.technical-details.title")</h4>
+    <p class="text-justify data-protection-paragraph">@messages("data-protection.technical-details.body1")</p>
+    <p class="text-justify data-protection-paragraph">@messages("data-protection.technical-details.body2")</p>
+    <p class="text-justify data-protection-paragraph">@messages("data-protection.technical-details.body3")</p>
+    <p class="text-justify data-protection-paragraph">@messages("data-protection.technical-details.body4")</p>
+
+    <h4 class="data-protection-headline mt-4">@messages("data-protection.participation.title")</h4>
+    <h5 class="data-protection-subheadline mt-3">@messages("consent.data-storage.title")</h5>
+    <p class="text-justify data-protection-paragraph">@Html(messages("data-storage.body1_html"))</p>
+    <p class="text-justify data-protection-paragraph">@Html(messages("data-storage.body2_html"))</p>
+
+    <h5 class="data-protection-subheadline mt-3">@messages("consent.voluntary.title")</h5>
+    <p class="text-justify data-protection-paragraph">@messages("consent.voluntary.body")</p>
+
+    <h5 class="data-protection-subheadline mt-3">@messages("consent.data-protection.title")</h5>
+    <p class="text-justify data-protection-paragraph">@messages("consent.data-protection.body")</p>
+    <address>@Html(messages("consent.data-protection.address_html"))</address>
+
+    <h5 class="data-protection-subheadline mt-3">@messages("data-protection.participation.usage.title")</h5>
+    <p class="text-justify data-protection-paragraph">@messages("data-protection.participation.usage.body")</p>
+
+</div>
+} {
+}{
+    @headerButtons()
+}

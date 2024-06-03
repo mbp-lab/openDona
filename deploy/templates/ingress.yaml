@@ -1,0 +1,27 @@
+# kubetpl:syntax:$
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/enable-cors: "true"
+    ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/client_max_body_size: 100m
+    nginx.ingress.kubernetes.io/proxy-body-size: 100m
+  labels:
+    app: kalinka
+    role: ingress
+  name: kalinka
+spec:
+  rules:
+  - host: ${KALINKA_HOST}
+    http:
+      paths:
+      - backend:
+          serviceName: kalinka
+          servicePort: ${KALINKA_PORT} 
+  tls:
+  - hosts:
+    - ${KALINKA_HOST}
+    secretName: tls-hpsgc.de

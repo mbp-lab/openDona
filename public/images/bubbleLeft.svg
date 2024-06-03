@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="84px" viewBox="0 0 148 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Export/Message/bubbleLeft</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M24,0 L104,0 C117.254834,-2.4348735e-15 128,10.745166 128,24 L128,40 C128,53.254834 117.254834,64 104,64 L0,64 L0,24 C-1.623249e-15,10.745166 10.745166,2.4348735e-15 24,0 Z" id="path-1"></path>
+        <filter x="-12.5%" y="-21.9%" width="125.0%" height="150.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Elements/sreceive1" transform="translate(10.000000, 8.000000)" fill-rule="nonzero">
+            <g id="Export/Message/bubbleLeft">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

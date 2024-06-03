@@ -1,0 +1,1 @@
+ALTER TABLE donations ADD COLUMN donation_data_source_type VARCHAR(512) NOT NULL DEFAULT 'Facebook';

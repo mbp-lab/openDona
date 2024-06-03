@@ -1,0 +1,4 @@
+html {
+  /* keep jarring white background from appearing on overscroll */
+  background-color: black;
+}

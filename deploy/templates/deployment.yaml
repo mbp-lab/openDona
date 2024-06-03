@@ -1,0 +1,85 @@
+# kubetpl:syntax:$
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kalinka
+  labels:
+    app: kalinka
+spec:
+  replicas: ${NUM_REPLICAS}
+  selector:
+    matchLabels:
+      app: kalinka
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: kalinka
+    spec:
+      containers:
+      - env:
+        - name: KALINKA_HOST
+          value: ${KALINKA_HOST}
+        - name: DATABASE_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: "${KALINKA_DB_CONFIGMAP}"
+              key: dbname
+        - name: DATABASE_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: "${KALINKA_DB_CONFIGMAP}"
+              key: host
+        - name: DATABASE_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: "${KALINKA_DB_CONFIGMAP}"
+              key: port
+        - name: APPLICATION_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: kalinka-app-secret
+              key: applicationSecret
+        - name: DATABASE_USER
+          valueFrom:
+            secretKeyRef:
+              name: "${KALINKA_DB_CREDS_SECRET_NAME}"
+              key: username
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: "${KALINKA_DB_CREDS_SECRET_NAME}"
+              key: password
+        - name: DONOR_SURVEY_ENABLED
+          value: "${DONOR_SURVEY_ENABLED}"
+        - name: DONOR_SURVEY_LINK
+          value: "${DONOR_SURVEY_LINK}"
+        - name: SOCIAL_DATA_INGESTION_ENABLED
+          value: "${SOCIAL_DATA_INGESTION_ENABLED}"
+        name: kalinka
+        image: "${IMAGE_REPOSITORY}${APP}:${GIT_COMMIT_ID}"
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: ${KALINKA_PORT}
+            scheme: HTTP
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: gesundheitscloud-regsecret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

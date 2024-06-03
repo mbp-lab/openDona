@@ -1,0 +1,13 @@
+# kubetpl:syntax:$
+kind: Service
+apiVersion: v1
+metadata:
+  name: kalinka
+spec:
+  selector:
+    app: kalinka
+  ports:
+  - protocol: TCP
+    port: ${KALINKA_PORT} 
+    targetPort: ${KALINKA_PORT}
+  type: ClusterIP

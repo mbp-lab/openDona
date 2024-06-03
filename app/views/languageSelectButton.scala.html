@@ -1,0 +1,12 @@
+@()(implicit request: RequestHeader, messages: Messages)
+
+<div>
+    <a class="languageSelect dropdown-toggle languageSelectButton float-right ml-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        @messages("language.current")
+    </a>
+    <div class="dropdown-menu languageSelectOption languageSelectButton" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item languageSelectOption" href="@routes.SocialDataDonationController.changeLanguage("en")">@messages("language.options.eng")</a>
+        <a class="dropdown-item languageSelectOption" href="@routes.SocialDataDonationController.changeLanguage("de")">@messages("language.options.ger")</a>
+        <a class="dropdown-item languageSelectOption" href="@routes.SocialDataDonationController.changeLanguage("hy")">@messages("language.options.am")</a>
+    </div>
+</div>

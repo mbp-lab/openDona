@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="148px"
+   height="84px"
+   viewBox="0 0 148 84"
+   version="1.1"
+   id="svg23"
+   sodipodi:docname="bubbleRightMine.svg"
+   inkscape:version="0.92.3 (unknown)">
+  <metadata
+     id="metadata27">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1054"
+     id="namedview25"
+     showgrid="false"
+     inkscape:zoom="4.7586375"
+     inkscape:cx="36.337705"
+     inkscape:cy="35.943898"
+     inkscape:window-x="0"
+     inkscape:window-y="360"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg23" />
+  <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title2">Export/Message/bubbleLeft</title>
+  <desc
+     id="desc4">Created with Sketch.</desc>
+  <defs
+     id="defs14">
+    <path
+       d="M24,0 L104,0 C117.254834,-2.4348735e-15 128,10.745166 128,24 L128,40 C128,53.254834 117.254834,64 104,64 L0,64 L0,24 C-1.623249e-15,10.745166 10.745166,2.4348735e-15 24,0 Z"
+       id="path-1" />
+    <filter
+       x="-12.5%"
+       y="-21.9%"
+       width="125.0%"
+       height="150.0%"
+       filterUnits="objectBoundingBox"
+       id="filter-2">
+      <feOffset
+         dx="0"
+         dy="2"
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset7" />
+      <feGaussianBlur
+         stdDeviation="5"
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         id="feGaussianBlur9" />
+      <feColorMatrix
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0"
+         type="matrix"
+         in="shadowBlurOuter1"
+         id="feColorMatrix11" />
+    </filter>
+  </defs>
+  <g
+     id="Symbols"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <g
+       id="Elements/sreceive1"
+       transform="translate(10.000000, 8.000000)"
+       fill-rule="nonzero">
+      <g
+         id="Export/Message/bubbleLeft">
+        <use
+           fill="black"
+           fill-opacity="1"
+           filter="url(#filter-2)"
+           xlink:href="#path-1"
+           id="use16" />
+        <use
+           xlink:href="#path-1"
+           id="use18"
+           transform="matrix(-1,0,0,1,128,0)"
+           style="fill:#acc0e0;fill-opacity:1"
+           x="0"
+           y="0"
+           width="100%"
+           height="100%" />
+      </g>
+    </g>
+  </g>
+</svg>

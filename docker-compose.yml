@@ -1,0 +1,36 @@
+version: "3.3"
+services:
+  kalinka:
+    restart: unless-stopped
+    build: .
+    links:
+      - postgres
+    ports:
+      - "9000:9000"
+    environment:
+      - "APPLICATION_SECRET=${APPLICATION_SECRET}"
+      - "DATABASE_HOST=postgres"
+      - "DATABASE_PORT=5432"
+      - "DATABASE_NAME=kalinka"
+      - "DATABASE_USER=${DATABASE_USER}"
+      - "DATABASE_PASSWORD=${DATABASE_PASSWORD}"
+      - "KALINKA_HOST=dona.tf.uni-bielefeld.de"
+      - "SOCIAL_DATA_SOURCE_ID=1234566"
+      - "SOCIAL_DATA_INGESTION_ENABLED=on"
+      - "DONOR_SURVEY_ENABLED=on"
+      - "DONOR_SURVEY_LINK=https://survey.mbp.tf.uni-bielefeld.de/index.php?r=survey/index&sid=287913"
+      - "FEEDBACK_SURVEY_LINK=https://survey.mbp.tf.uni-bielefeld.de/index.php?r=survey/&sid=551679&newtest=Y"
+      - "SECURE_COOKIE=false"
+  postgres:
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: "${DATABASE_PASSWORD}"
+      POSTGRES_USER: "${DATABASE_USER}"
+      POSTGRES_DB: "kalinka"
+    image: postgres:12
+    volumes:
+      - dona_main_newAudio_data:/var/lib/postgresql/data
+    ports:
+      - "5555:5432"
+volumes:
+  dona_main_newAudio_data:

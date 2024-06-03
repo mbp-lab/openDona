@@ -1,0 +1,40 @@
+@()(implicit request: RequestHeader, messages: Messages)
+
+@mainNew("Dona - ForMe")() {
+    <div class="bgwhite mt-4 text-center align-content-center">
+        <h3 class="headline">@messages("donation-info.title")</h3>
+        <div class="row">
+            <div class="col">
+                <p class="paragraph text-left">@Html(messages("donation-info.data-request"))</p>
+            </div>
+            <div class="col">
+                <img src="@routes.Assets.at("images/Datenanfrage.png")" class="donation-info-image">
+            </div>
+        </div>
+        <div class="row">
+           <div class="col">
+               <p class="paragraph text-left">@Html(messages("donation-info.anonymisation"))</p>
+           </div>
+            <div class="col">
+                <img src="@routes.Assets.at("images/Anonymisierung.png")" class="donation-info-image">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="paragraph text-left">@Html(messages("donation-info.storage"))</p>
+            </div>
+            <div class="col">
+                <img src="@routes.Assets.at("images/Speicherung.png")" class="donation-info-image">
+            </div>
+        </div>
+    </div>
+<div class="modal fade" id="consent-dialog"  role="dialog">
+    @consent()
+</div>
+} {
+@footer(title = Some(messages("footer.title")), previousLink = Some("/instructions")){
+    <button class="btn btn-outline footer-forward-button text-center" data-toggle="modal" data-target="#consent-dialog">@messages("links.donate")</button>
+}
+}{
+    @headerButtons()
+}

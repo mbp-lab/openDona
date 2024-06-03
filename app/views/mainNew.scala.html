@@ -1,0 +1,111 @@
+@(title: String, designVersion: Option[String] = None)(header: Html = Html(""))(content: Html)(footer: Html = Html(""))(headerRight: Html = Html(""))(implicit request: RequestHeader, messages: Messages)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> @title </title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/roboto_google_font.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/ptSerif_google_font.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/ptSans_google_font.css")">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("lib/bootstrap/css/bootstrap.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("lib/font-awesome/css/font-awesome.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/core.css")">
+        @if(designVersion.isDefined) {
+            <link rel="stylesheet" media="screen" href="@routes.Assets.at(s"stylesheets/${designVersion.get}.css")">
+        } else {
+            <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/default.css")">
+        }
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+            <!--
+        the  viewport metatag leaves a massive black area on the right of the screen.
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        seems to only scale parts of the page. so has been disabled
+        -->
+
+    </head>
+    <body class="">
+        <script src="@routes.Assets.at("lib/jquery/jquery.min.js")" type="text/javascript"></script>
+
+        <div class="background-image background-image::before"></div>
+
+        <div class="main-container">
+            <div class="">
+            <div id="unsupported-browser-warning" class="d-none p-3 w-100 bg-danger text-white text-center">@messages("browser-warning.text")</div>
+            <div class="row mx-2 mt-3 justify-content-between">
+                <div id="header-hpi-logo">
+                    <a class="mr-1 mt-1 homeButton" href="/"><img src="@routes.Assets.at("images/homeButton.svg")" height="30px"></a>
+                </div>
+                <div id="header-uni-logo" class="w-75 float-right">
+                @headerRight
+                </div>
+            </div>
+            <div>
+                @header
+            </div>
+            </div>
+            <section class="ml-0 mr-0 pt-4 bg-white mt-4 pb-5 w-100 main-body">
+                <a target="_blank" href="https://www.uni-bielefeld.de/"><img src="@routes.Assets.at("images/UBF-logo_graustufen.svg")" height="75px" class="main-dhc-logo ml-1"></a>
+                <div class="mx-auto main-body-column">
+                @content
+                </div>
+            </section>
+            <section class="bg-white mb-4 ml-0 mr-0 position-relative">
+            <div class="container-fluid row justify-content-between ml-0 mr-0">
+                <div class="col-md row align-content-end">
+                <ul class="list-inline ml-4">
+                    @footer
+                    <li class="list-inline-item"><a href="@routes.AboutController.dataProtection" class="text-black-50" target="_blank">@messages("links.data-protection")</a></li>
+                    <li class="list-inline-item text-white">&middot;</li>
+                    <li class="list-inline-item"><a href="/impressum" class="text-black-50" target="_blank">@messages("links.imprint")</a></li>
+                </ul>
+
+                </div>
+                <div class="flex-wrap col-md mr-0" style="max-width: 400px;">
+                    <div class="row mb-1 mr-1">
+                        <div class="col">
+                            <a target="_blank" href="https://www.bmbf.de/">
+                                <img src="@routes.Assets.at("images/BMBF_logo.png")" class="img-fluid" alt="BMBF">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a target="_blank" href="https://www.hpi.de">
+                                <img src="@routes.Assets.at("images/HPI_logo.png")" class="img-fluid" alt="hpi">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a target="_blank" href="https://www.data4life.care/">
+                                <img src="@routes.Assets.at("images/data4life-blueLogo.svg")" alt="d4l" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <span class="float-left" style="font-size: x-small">
+                            @messages("footer.projectNumber")
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </section>
+        </div>
+
+        <script src="@routes.Assets.at("lib/bootstrap/js/bootstrap.bundle.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/bundle.js")" type="text/javascript"></script>
+        <script>
+            // this is for scrolling over the background - necessary as background-attachment does not work with safari
+                document.addEventListener("DOMContentLoaded", function () {
+                    document.addEventListener("scroll", function () {
+                        var scroll = window.scrollY;
+                        var backgroundBefore = document.querySelector(".background-image::before");
+                        if (backgroundBefore) {
+                            backgroundBefore.style.transform = "translate3d(0, " + (-scroll / 2) + "px, 0)";
+                        }
+                    });
+                });
+        </script>
+    </body>
+</html>

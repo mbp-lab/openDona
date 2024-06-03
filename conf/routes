@@ -1,0 +1,23 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+
+GET     /                              controllers.SocialDataDonationController.landing
+GET     /learn-more                    controllers.SocialDataDonationController.learnMore
+GET     /impressum                     controllers.SocialDataDonationController.impressum
+GET     /instructions                  controllers.SocialDataDonationController.instructions
+POST    /consent-to-study              controllers.SocialDataDonationController.consentToStudy
+GET     /data-donation                 controllers.SocialDataDonationController.showDataDonationPage
+POST    /data-upload                   controllers.SocialDataDonationController.postData
+
+GET     /change-language/:language     controllers.SocialDataDonationController.changeLanguage(language: String)
+
+GET    /feedback-survey/:donorId       controllers.FeedbackSurveyController.goToFeedback(donorId: String)
+
+GET     /health                        controllers.HealthController.status
+GET     /data-protection               controllers.AboutController.dataProtection
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

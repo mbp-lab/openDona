@@ -1,0 +1,8 @@
+html {
+  /* keep jarring white background from appearing on overscroll */
+  background-color: #B6D1E2;
+}
+
+.bgImage {
+    background-image: url("/assets/images/background-alt.jpg");
+}

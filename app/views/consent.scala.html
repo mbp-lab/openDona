@@ -1,0 +1,64 @@
+@()(implicit request: RequestHeader, messages: Messages)
+
+
+<div class="modal-dialog modal-xl modalMaxWidth">
+    <div class="modal-content">
+        <div class="modal-header bgmain">
+            <div class="flex-grow-1 flex-column">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <h3 class="data-protection-headline mt-2">@messages("consent.title")</h3>
+                <div class="flex-row-reverse flex-grow-1 d-flex">
+                <a href="@routes.Assets.at(messages("informedConsent.pdf"))" target="_blank" class="btn report-problem-button-footer bg-secondary">@messages("consent.pdf")</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-body">
+            <h4 class="data-protection-headline">@messages("consent.about.title")</h4>
+            <p class="text-justify data-protection-paragraph">@messages("consent.about.body1")
+            </p>
+
+            <p class="text-justify data-protection-paragraph">
+                @Html(messages("consent.about.body2_html"))
+            </p>
+
+            <h4 class="data-protection-headline">@messages("consent.benefit.title")</h4>
+            <p class="text-justify data-protection-paragraph">@Html(messages("consent.benefit.body"))
+            </p>
+
+            <h4 class="data-protection-headline">@messages("consent.data-storage.title")</h4>
+            <p class="text-justify data-protection-paragraph">@Html(messages("data-storage.body1_html"))</p>
+            <p class="text-justify data-protection-paragraph">@Html(messages("data-storage.body2_html"))</p>
+
+            <h4 class="data-protection-headline">@messages("consent.voluntary.title")</h4>
+            <p class="text-justify data-protection-paragraph">@messages("consent.voluntary.body")
+            </p>
+
+            <h4 class="data-protection-headline">@messages("consent.data-protection.title")</h4>
+            <p class="text-justify data-protection-paragraph">@messages("consent.data-protection.body")
+            </p>
+            <address class="data-protection-paragraph">@Html(messages("consent.data-protection.address_html"))</address>
+
+            <h4 class="text-justify data-protection-headline">@messages("consent.data-purpose.title")</h4>
+            <p class="text-justify data-protection-paragraph">@messages("consent.data-purpose.body")
+            </p>
+            
+
+            <p class=" text-justify data-protection-paragraph">
+                <strong>
+                    @messages("consent.confirmation")
+                </strong>
+            </p>
+            <div class="d-flex justify-content-end align-items-center">
+                <button type="button" class="btn footer-backward-button consent-button" data-dismiss="modal">@messages("consent.buttons.close.caption")</button>
+
+                @helper.form(routes.SocialDataDonationController.consentToStudy(), '_feedbackTooltip -> "true", 'class -> "text-right") {
+                <div align="center">
+                    @helper.CSRF.formField
+                    <input type="submit" value="@messages("consent.buttons.agree.caption")" class="btn footer-forward-button consent-button"></input>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

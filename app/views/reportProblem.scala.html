@@ -1,0 +1,21 @@
+@()(implicit request: RequestHeader, messages: Messages)
+
+<div class="modal-dialog modal-xl modalMaxWidth" >
+    <div class="modal-content">
+        <div class="modal-header bgmain">
+            <h3 class="data-protection-headline">@messages("reportProblem.title")</h3>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="paragraph">
+                @Html(messages("reportProblem.body"))
+            </p>
+            <img src="@routes.Assets.at(messages("reportProblem.image"))" class="img-fluid">
+            <div class="d-flex justify-content-end align-items-center">
+                @* <button type="button" class="btn footer-forward-button consent-button" data-dismiss="modal">OK</button> *@
+                <a class="btn modal-forward-button" href="/instructions">@messages("reportProblem.next")</a>
+            </div>
+        </div>
+    </div>
+
+</div>

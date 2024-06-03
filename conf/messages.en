@@ -1,0 +1,627 @@
+# Landing page
+
+landing.header.title=Illuminate the darkness with your social media data
+landing.header.body=We are researching how people interact in the digital space and what those interactions mean for human well-being.
+landing.what.title=What is this about?
+landing.what.body1=Social interactions play a significant role in human well-being. To better understand this relationship, we are developing methods to measure digital social interactions for research.
+landing.what.body2=You can support us by anonymously donating your chat meta-data from WhatsApp, Facebook or Instagram.
+
+
+landing.why.title=Why should I participate?
+landing.why.col1.title=Receive feedback
+landing.why.col1.body=You will receive graphs on your messaging behavior, such as in which chats you write the most, when are you the most active, how fast you reply, etc. This study is not intended to be a clinical-psychological diagnosis.
+
+
+landing.why.col2.title=Support research
+landing.why.col2.body_html=The results of this study will contribute to the overall goal of better understanding the effects of social interactions on human well-being.
+
+
+landing.why.col3.title=Stay anonymous
+landing.why.col3.body_html=We will ask you to donate  <strong><a href="/learn-more">anonymized chat data </a></strong>  (number of words for text messages, length in seconds for voice messages, message timestamp and pseudonyms of the chat participants). We will have no access to any names, message texts, voice message content or any other content.
+landing.contact.body_html=The purpose of this website is to inform you about the background and process of this online study. If any questions or concerns arise during the process, please write to the principal investigator (Prof. Dr. Hanna Drimalla, AG Multimodal Behavior Processing, Technische Fakultät, Universität Bielefeld, <a href="mailto:drimalla@techfak.uni-bielefeld.de">drimalla@techfak.uni-bielefeld.de</a>, Tel. +49 521 106-12043)
+
+
+landing.imagePath.donationProcedure1 =images/landingDonationProcedure_1_English.png
+landing.imagePath.donationProcedure2 =images/landingDonationProcedure_2_English.png
+landing.imagePath.donationProcedure3 =images/landingDonationProcedure_3_English.png
+landing.imagePath.exampleFeedback =images/landingExampleFeedback_English.png
+
+
+# Learn More page
+
+
+
+learn-more.how-to-participate.title=How do I participate in the study?
+learn-more.how-to-participate.body=This study will be completely anonymous and online. To participate in this study, we will ask you to donate your anonymized messages and complete  questionnaires. After  downloading the interaction data of a platform of your choice, the study will only last for about 10 minutes.
+
+
+learn-more.how-to-cancel.title=Can I drop out during the study?
+learn-more.how-to-cancel.body=First things first: participation is entirely voluntary. You can drop out at any point during the study. Please note that due to the anonymous nature of the data, we cannot identify and delete your data after participation.
+
+
+learn-more.data-storage.title=What data will be used?
+
+
+learn-more.imagePath.text=images/dataAnonymizationExample-text-English.svg
+learn-more.imagePath.voice=images/dataAnonymizationExample-voice-English.svg
+
+# data storage text body is reused, see below
+
+
+
+learn-more.storage.body1_html=<strong><em>Data donation: </strong></em>When donating your interaction data, we extract metadata (e.g. length and timestamp of message as well as pseudonyms of conversation participants) and no actual contents (e.g. message text or name of message sender). To ensure that, we anonymize your data on the user-side, meaning that your private data is anonymized locally and does not leave your device. This means that we will never see the content of your conversations. Before uploading, we will show you a preview of the data so that you can verify that it is sufficiently anonymous.
+learn-more.storage.body2_html=<strong><em>Questionnaires: </strong></em>You first fill out questionnaires about your demographic information. You can then carry out the data donation and receive feedback. Questionnaire data is also collected completely anonymously using <a target="_blank" href="https://www.limesurvey.org/support/faq/39-data-protection-and-policy">LimeSurvey</a>.
+
+
+learn-more.data-handling.title=What happens to my data?
+learn-more.data-handling.body1=Since we are not collecting any names or other person-specific information, we will not be able to associate you with your data once the study has been completed - the donated data is anonymous. This means that your data cannot be deleted on request.
+learn-more.data-handling.body2=The data and results of this study will be published in scientific journals. The published data will be anonymous, meaning that individuals cannot be identified. The fully anonymized data will be uploaded to a research data repository and qualified scientists will be granted access.
+
+
+learn-more.image.text-messages.caption=Example of an anonymized text message.
+learn-more.image.voice-messages.caption=Example of an anonymized voice message.
+
+
+# Instructions page
+
+
+
+instructions.about.title=How do I request data from social media platforms?
+instructions.about.body_html=Before participating in the study, please request your data directly from Facebook and/or WhatsApp and/or Instagram. You can donate data from each of these platforms. If you only want to donate data from one platform, please select the platform that is more important to you. <b>Please take a close look at the corresponding instructions, as they contain important information for the further steps.</b>
+instructions.datasource.title_format =Instructions for getting %s data
+instructions.download-procedure.title=Overview of the download & donation procedure:
+instructions.continue.body=If you have received your data using these instructions, you can now start with the declaration of consent and survey. Afterwards you can donate your data.
+instructions.haveData=You need 5-7 WhatsApp chat files.
+
+
+# Donation info page
+
+
+
+donation-info.title=How do I donate my data?
+donation-info.data-request=<strong>Data request: </strong>You request your social media data from a platform of your choice (currently supported: Facebook, WhatsApp, and Instagram) and download it to your device.
+donation-info.anonymisation=<strong>Anonymization: </strong>We will remove all content from your data and limit it to metadata (e.g. length and timestamp of message). Your name, as well as the names of other participants, will get replaced by random pseudonyms (eg. "James" &rarr; "anonymous13"). You may examine the anonymization of your data before uploading it to our servers.
+donation-info.storage=<strong> Storage: </strong>Only anonymized and reduced data will be uploaded to one of our secure servers.
+
+
+# Consent pop-up
+
+
+
+consent.title=Informed Consent
+consent.pdf=Download PDF
+
+consent.about.title=Information about the Study
+consent.about.body1=The aim of this study is to measure the dynamics of social interaction of people by leveraging their social media data. This study is completely anonymous and online. It includes only the donation of your anonymized social media data. After having downloaded your interaction data from a platform of your choice, participation in the study will only take about 10 minutes.
+consent.about.body2_html=By agreeing, you confirm that you have read and understood the background and process of this online study.
+
+
+consent.benefit.title=Benefits and risks
+consent.benefit.body=With your participation you enable us to identify and characterise new insights about social interactions between humans. You gain insights into your own personal messaging behavior. Furthermore, at the end of the study, you can participate in a raffle for a 50€ voucher (<a target="_blank" href="https://www.cadooz.com/en/products/bestchoice-shopping-gift-card/">Cadooz-Bestchoice</a>). This is an ongoing study, so a voucher is drawn every time a set of 100 participants is achieved (winning chance: 1/100). We only collect anonymized data. Before the donation of your data you have to download the messaging data locally on your own device. Since this data contains sensitive information we recommend to delete the local copy of your data after the end of the study. Please conduct the study alone and in a calm environment to ensure your privacy.
+
+
+consent.data-storage.title=Collected Data
+
+
+# data storage text body is reused - see below
+
+
+
+consent.voluntary.title=Voluntary Participation
+consent.voluntary.body=The participation in this study is entirely voluntary. At any time you may revoke your consent concerning your participation in this study, without giving any reason and without any kind of negative consequences. Before uploading the data to our research platform, you may revoke, without giving reason, your consent concerning the storage of your anonymized data, without any negative consequences.
+
+
+consent.data-protection.title=Data Security
+consent.data-protection.body=Since we are not collecting any names or other person-specific data, we will not be able to associate you with your data once the study has been completed from your side - the donated data is anonymous. This means that your data cannot be deleted on your request after submission. Due to the completely anonymous data handling and processing, the General Data Protection Regulation (GDPR) does not apply. In case of questions or concerns, please contact the office for data protection at the University of Bielefeld:
+consent.data-protection.address_html=Data protection officer <br /> University Bielefeld <br /> Office: UHG T6-234  <br />Phone +49 521 106-5225 <br /><a href="mailto:datenschutzbeauftragte@uni-bielefeld.de">datenschutzbeauftragte@uni-bielefeld.de</a>
+
+
+
+
+consent.data-purpose.title=Usage of data
+consent.data-purpose.body=The data and results of these surveys will be published in scientific journals. The published data will be anonymous, meaning that it cannot be associated with individuals. The fully anonymized data will be uploaded to a research data repository and qualified scientists will be granted access.
+
+
+consent.confirmation=I hereby confirm that I have read and understood the information above and agree to the conditions for participation.
+
+
+consent.buttons.agree.caption=Agree
+consent.buttons.close.caption=Close
+informedConsent.pdf=informedConsents/InformedConsent_eng.pdf
+
+# Donation page
+
+
+
+donation.select-data.title=Choose data for donation
+donation.select-data.body1=Please choose the platform from which you want to donate your data. To successfully anonymize your data your username is automatically determined. Your username will not be saved or donated.
+donation.select-data.body2=You can now upload your files to your browser for anonymization. Note that you will have the opportunity to view your anonymized data before submitting it to us.
+donation.select-data.donation=Data Donation
+donation.select-data.input1=Choose files
+donation.select-data.input2=Browse
+donation.select-data.remove=Remove
+
+
+donation.select-date.start=Start of donation:
+donation.select-date.end=End of donation:
+
+
+donation.preview-data.title=Preview of your anonymized data
+donation.preview-data.button=Click here for a preview of your anonymized data
+donation.preview-data.body1=No private information has left your device. Only the meta-information has been extracted.
+donation.preview-data.body2=As you can see, all the usernames have been anonymized and the message content has been replaced by the word count.
+donation.preview-data.message=Message
+donation.preview-data.sender=Sender of message
+donation.preview-data.receiver=Receiver of message
+donation.preview-data.word-count=Word count
+donation.preview-data.length-seconds=Length in seconds
+donation.preview-data.timestamp=Timestamp of message
+donation.preview-data.group-conversation=Group conversation
+donation.preview-data.voice-message=Voice message
+
+
+donation.friendsMapping.title=<b>Aliases for your contacts</b>
+donation.friendsMapping.subtitle.facebook=We have anonymized your data and your contacts. If, in the next step, you want to reconstruct which conversations and contacts are involved in the anonymized evaluation, make a note of the following assignments of contacts (e.g. A**** B*****) and chats (e.g. “F4"). From now on, these are the anonymized names for your chats. The assignment is not saved and is lost as soon as you leave this page.
+donation.friendsMapping.subtitle.whatsapp=We have anonymized your data and your contacts. If, in the next step, you want to reconstruct which conversations and contacts are involved in the anonymized evaluation, make a note of the following assignments of contacts (e.g. A**** B*****) and chats (e.g. “W4"). From now on, these are the anonymized names for your chats. The assignment is not saved and is lost as soon as you leave this page.
+donation.friendsMapping.subtitle.instagram=We have anonymized your data and your contacts. If, in the next step, you want to reconstruct which conversations and contacts are involved in the anonymized evaluation, make a note of the following assignments of contacts (e.g. A**** B*****) and chats (e.g. “I4"). From now on, these are the anonymized names for your chats. The assignment is not saved and is lost as soon as you leave this page.
+donation.friendsMapping.onlySeven=These are just the contacts of your 7 chats in which overall the most words were sent. <b> Below you can also select different chats. </b>
+donation.friendsMapping.moreFriends=and {0} others.
+donation.friendsMapping.chat=Chat
+donation.friendsMapping.onlyYouInConv=You are the only member in this chat. This could be because the other people have left the chat.
+
+
+
+
+donation.sendData.wait=Sending the data could take a few minutes. Please wait and keep this website open. Thanks!
+
+
+donation.raw-data-explanation_format=Below, you may view %s of your anonymized messages. In case you want to view all anonymized messages, <b>take a look at the</b>
+donation.raw-data-link.text=<b>raw data</b>
+
+
+# provided by Astrid
+
+
+
+donation.alias-not-required=Not required
+donation.alias=Username
+donation.please-insert-alias=Please enter your username to enable anonymization.
+donation.choose-files-here=Select the files you would like to donate here:
+donation.choose-period=Here you can limit the period of your data donation:
+donation.aliases-overview=Aliases of your contacts:
+
+
+donation.processing=Your data is being extracted and anonymized...
+donation.be-patient=The data extraction process may take some time. Please be patient...
+donation.successful=Your data has been successfully anonymized.
+donation.error=An error occured:
+
+
+donation.anonymisation.donor=Donor
+donation.anonymisation.friend=Contact
+donation.anonymisation.friendInitial=C
+donation.anonymisation.chatInitialW=W
+donation.anonymisation.chatInitialF=F
+donation.anonymisation.chatInitialI=I
+donation.anonymisation.system=System
+donation.anonymisation.chooseUsername=Please choose your username. Your username will not be saved and we will not know it.
+donation.anonymisation.loading=Sending the anonymized data could take a few minutes. Please wait and keep this website open. Thanks!
+
+
+
+
+donation.anonymisation.chatSelection.title=You can select up to 10 chats to receive feedback for
+donation.anonymisation.chatSelection.clickHereToSelect=Click here to choose different chats to receive feedback for
+
+
+
+
+donation.anonymisation.loading.tooLong.title=If this process is taking more than 5 minutes, it might be due to the following:
+donation.anonymisation.loading.tooLong.issue.1=You are trying to upload file types that are not supported (the correct input types are .txt or .zip for WhatsApp and .zip for Facebook and Instagram)
+donation.anonymisation.loading.tooLong.issue.2=You have exported you WhatsApp chats from different devices
+donation.anonymisation.loading.tooLong.issue.3=The files you are trying to upload have unusually large sizes
+donation.anonymisation.loading.tooLong.issue.4=Your internet connection is slow
+donation.anonymisation.loading.tooLong.issue.5=Other unexpected issues
+donation.anonymisation.loading.tooLong.issue.6=Help us improve <a href="@messages("links.reportProblem")" target="_blank">here</a>
+
+
+donation.errors.no-profile=The uploaded data does not include profile information.
+donation.errors.no-alias=Please enter your username. You can find it in your WhatsApp profile.
+donation.errors.not-enough-chats_format=Please choose your 5-7 most important conversations. You have selected %s. <br>Press and hold the ctrl/command key to select multiple files at the same time.
+donation.errors.something-went-wrong=Something went wrong! Please go back to the start and repeat the process.
+donation.errors.same-file=You can only select files that differ. Please choose your 5-7 most important conversations.
+donation.errors.no-messages-time-period=There are no messages in the selected period. Please select a longer and valid period.
+donation.errors.dates-no-sense=The selected period is not valid. Please check the correctness of the selected dates.
+donation.errors.dates-not-enough-months=To donate your data, please select a period of at least 6 months within the period of your donation.
+donation.errors.somewhereError=There is an error somewhere. Please check your data donation.
+donation.errors.emptyOrJustOnePerson=All your chats should contain at least 100 messages and at least one contact (other than yourself).
+
+
+donation.submit=Submit
+
+
+# feedback
+
+
+
+feedback.thanks.title=Thank you for the donation of your social media data!
+feedback.landscapeMode=Please hold your device <b>sideways</b> to view this page properly.
+
+
+
+
+
+
+feedback.importantMessage.title=Important Note:
+feedback.importantMessage.disclaimer=The graphs and visualizations displayed <b>do <u>not</u> allow any direct conclusions</b> to be drawn about the quality of your social relationships. Your chats are analyzed and visualized regarding amount and timing only.
+
+
+feedback.reminder=Don't forget to register for the voucher raffle at the bottom of the page.
+feedback.startLabel=Start
+feedback.pauseLabel=Pause
+
+
+feedback.graph.title=Feedback on your %s Messages
+feedback.graph.total-messages=Total messages
+feedback.graph.average-per-active-month=Average messages per active month
+feedback.graph.active-years-explanation_format=In total, there are %s years in which you participated in conversation (i.e. you sent or received at least one message during the year)
+# minor grammar correction by astrid
+
+feedback.graph.active-months-explanation_format=In total, there are %s months in which you participated in conversation (i.e. you sent or received at least one message during the month)
+feedback.graph.messages=Messages
+feedback.graph.messages-over-time=%s messages over time
+feedback.graph.time=Time
+feedback.graph.number-of-messages=Number of messages
+feedback.graph.sent=Sent
+feedback.graph.received=Received
+feedback.graph.response-times=%s response times
+feedback.graph.response-time=Response time
+feedback.graph.median-response-time=Median response time
+feedback.graph.overview=Overview
+feedback.graph.detail=Detail
+feedback.graph.you=You
+feedback.graph.friends=Contacts
+
+
+# plots main page titles
+
+feedback.title.statisticsCard=Overview of all Activity
+feedback.title.interactionIntensity=Interaction Intensity
+feedback.title.dailyActivityTimes=Daily Activity Times
+feedback.title.responseTimes=Response Times
+feedback.title.pleaseContinue=We hope you had exciting insights. Thanks a lot!
+
+
+feedback.facebook.info=The potentially high number of Facebook contacts could lead to a cluttered visualization. Therefore, in the following, only visualizations for your 1-10 selected Facebook chats are shown.
+feedback.instagram.info=The potentially high number of Instagram contacts could lead to a cluttered visualization. Therefore, in the following, only visualizations for your 1-10 selected Instagram chats are shown.
+
+
+feedback.nextButton=Next
+feedback.finishButton=Finish
+feedback.toRaffleButton=Sign up for raffle
+
+
+# plots more about titles
+
+feedback.moreAbout.interactionIntensity.title=More about your Interaction Intensity
+feedback.moreAbout.dailyActivityTimes.title=More about your Daily Activity Times
+feedback.moreAbout.responseTimes.title=More about your Response Times
+
+
+# plot descriptions
+
+feedback.graph.yearMonth=Year-Month:
+feedback.graph.chatWith=Chat with:
+feedback.graph.overallData=All chats
+feedback.graph.resetView=Reset view
+
+
+# plots example title
+
+feedback.graph.example.title=This is an <b>example</b> created from example data - <u>not</u> from your data.
+
+
+# polar plot
+
+feedback.graph.animatedPolarPlot.title=Planet representation
+feedback.graph.animatedPolarPlot.description=This visualization displays you as the yellow dot in the middle. The chats you donated are the white dots around you. The closer a dot is to you, the more words you have written in this chat. In the time-slider below you can see and select the month and year for which the data is shown. The smaller lighter white dots show the activity in the respective chats in other months. Click <a style="font-weight:bold" href="#polarPlotExplanation" data-toggle="modal" data-target="#polarPlotExplanation">HERE</a> to see an explanation with an example.
+feedback.graph.animatedPolarPlot.legend.donor=You
+feedback.graph.animatedPolarPlot.legend.others=Chat Intensity
+feedback.graph.animatedPolarPlot.example.image=images/feedback_example_polarPlot_english.svg
+feedback.graph.animatedPolarPlot.example.text=<p><b>(1)</b> Here the white solid dot is very close to the large yellow dot in the center. This means that in the month shown below, the communication in this chat was very intense compared to the previous months and the other chats. In this example, there are only a few transparent small dots on the trajectory. This is because the data only covers a few months.</p><p><b>(2)</b> Hardly any transparent history dots can be seen here, as they all lie on top of each other in roughly the same place. This is because the intensity has been very stable over the months in this chat.</p><p><b>(3)</b> In contrast to (2), many transparent points are visible here. So the intensity of this chat has changed a lot over the months. In the currently displayed month, the big intense white dot is further away than some other transparent small points: Accordingly, there were months before in which more words were exchanged in this chat. However, there have also been months when the intensity was lower.</p><p><b>(4)</b> Click this icon to download the graph.</p>
+
+
+# animatedHorizontalBarChart
+
+feedback.graph.animatedHorizontalBarChart.title=Total sent words
+feedback.graph.animatedHorizontalBarChart.description=Here you can see the total amount of words you sent in your different chats adding up per month. In the time-slider below you can see and select the month and year for which the data is shown. Click <a style="font-weight:bold" href="#animatedHorizontalBarChartExplanation" data-toggle="modal" data-target="#animatedHorizontalBarChartExplanation">HERE</a> to see an explanation with an example.
+feedback.graph.animatedHorizontalBarChart.legend=Sent words
+feedback.graph.animatedHorizontalBarChart.xAxis=Number of sent words
+feedback.graph.animatedHorizontalBarChart.example.image=images/feedback_example_horizontalBarChart_english.svg
+feedback.graph.animatedHorizontalBarChart.example.text=<p><b>(1)</b> In this example, over the entire period the most words were sent in the chat with F9, F10: just over 140 thousand.</p><p><b>(2)</b> In contrast to (1), this example chat had the fewest sent words.</p><p><b>(3)</b> The year and month are displayed here. You can see how many words were sent in the chats per month. Try out the time slider!</p><p><b>(4)</b> Click this icon to download the graph.</p>
+
+
+
+
+# horizontalBarChart overall
+
+feedback.graph.horizontalBarChartOverall.description=This graph shows the total number of words you received and sent across all your donated chats.
+feedback.graph.horizontalBarChartOverall.legend.sent=Sent words
+feedback.graph.horizontalBarChartOverall.legend.received=Received words
+feedback.graph.horizontalBarChartOverall.xAxis=Number of words
+feedback.graph.horizontalBarChartOverall.yAxis.sent=Sent
+feedback.graph.horizontalBarChartOverall.yAxis.received=Received
+
+
+# slidingWindowMean of sent and received words plot
+
+feedback.graph.slidingWindowMean.description=Here you can see the average number of your sent and received words per day (more precisely, we calculate a so-called sliding window average with a window size of 30 days). At the top left you can also select your individual chats to see the graph of your sent words for the selected chat.<br><br> <i> If there is no value for the <u>received words</u> in the overview for one or more days, then it has been hidden due to data protection reasons. Only aggregated information from which no direct conclusions can be drawn about your individual contacts is displayed.</i>
+feedback.graph.slidingWindowMean.legend.sent=Sent words
+feedback.graph.slidingWindowMean.legend.received=Received words
+feedback.graph.slidingWindowMean.legend.receivedNotShown=Privacy: Received words are not displayed
+feedback.graph.slidingWindowMean.yAxis=Average number of words
+feedback.graph.slidingWindowMean.example.image=images/feedback_example_slidingWindowMean_english.svg
+feedback.graph.slidingWindowMean.example.text=<p class="text-left"><b>(1)</b> In this example, a significant increase in the number of sent and received words can be observed. In this period the sent words were more than the received words. </p><p class="text-left"><b>(2)</b> Here you can see an even bigger increase in sent and received words. But in that period, across all chats, more words were received.</p>
+
+
+# dailySentReceivedWords plot
+
+feedback.graph.dailySentReceived.description=This graph shows the exact word count of your sent and received messages per day.
+feedback.graph.dailySentReceived.legend.sent=Sent words
+feedback.graph.dailySentReceived.legend.received=Received words
+feedback.graph.dailySentReceived.yAxis=Number of words
+
+
+# monthlySentReceivedWords plot
+
+feedback.graph.monthlySentReceived.description=This graph shows the exact word count of your sent and received messages per day. At the top left you can also select your individual chats to see the graph of your sent words for the selected chat.
+feedback.graph.monthlySentReceived.legend.sent=Sent messages
+feedback.graph.monthlySentReceived.legend.received=Received messages
+feedback.graph.monthlySentReceived.yAxis=Number of messages
+
+
+# dailyActivityTimes plot
+
+feedback.graph.dailyActivityHoursPlot.description=In this plot, you can see in which hours of the day you were active for the whole time span of the data you donated. If an hour (square in the plot) has a darker color, you sent more words in that hour than in your average hour. If the color is lighter, then you sent fewer words than in the average case. If you want to look closer at a specific time span you can zoom in by clicking on the graph and holding while you move your mouse to the left or the right to produce the time window you want to zoom into. Click <a style="font-weight:bold" href="#dailyActivityHoursPlotExplanation" data-toggle="modal" data-target="#dailyActivityHoursPlotExplanation">HERE</a> to see an explanation with an example.
+feedback.graph.dailyActivityHoursPlot.yAxis=Time
+feedback.graph.dailyActivityHoursPlot.moreThanAverage=More than your average
+feedback.graph.dailyActivityHoursPlot.average=Your average
+feedback.graph.dailyActivityHoursPlot.lessThanAverage=Less than your average
+feedback.graph.dailyActivityHoursPlot.example.image=images/feedback_example_dailyActivityHoursPlot_english.svg
+feedback.graph.dailyActivityHoursPlot.example.text=<p><b>(1)</b> In this example, a change in the activity hours can be observed in this area. In the period at <b>(2)</b> you can see that no messages were sent between approximately 8:00 AM and 12:00 PM. Then in the period at <b>(3)</b>, this area of no messages has shifted to the hours between about 2:00 AM and 6:00 AM. This could be due to moving to a different time zone or a change in sleep schedule.</p><p><b>(4)</b> For example, more dark squares can be observed here. Therefore, an above-average number of messages were sent in this period.</p><p><b>(5)</b> Click this icon to download the graph.</p>
+
+
+# dayPartsPlot overall
+
+feedback.graph.dayPartsOverall.description=In this graph, you can see how the words you sent and received are distributed over different parts of the day. You see  averaged values over the entire period of your data donation.
+feedback.graph.dayPartsOverall.legend.sent=Sent words
+feedback.graph.dayPartsOverall.legend.received=Received words
+feedback.graph.dayPartsOverall.yAxis=Percentage of all words
+feedback.graph.dayPartsOverall.xAxis=Four parts of the day
+feedback.graph.dayPartsOverall.example.image=images/feedback_example_dayPartsPlot_english.svg
+feedback.graph.dayPartsOverall.example.text=<p class="text-left"><b>(1)</b> In this example, between midnight and 6:00 AM and between 6:00 AM and noon less than 10% of all words were sent and received. In both of those parts of the day, a few more words were sent than received.</p><p class="text-left"><b>(2)</b> On the other hand, between noon and 6:00 PM a little less than 40% of all words were sent and received.<br> Between 6:00 PM and midnight just under 45% of all words were sent and received. In both of those parts of the day, a few more words were received than sent.</p>
+
+
+# animatedDayPartsPlot monthly
+
+feedback.graph.dayPartsMonthly.description=Contrary to the graph above, in this graph you can see how the words you sent are distributed over different parts of the day <u>per month</u>.
+feedback.graph.dayPartsMonthly.legend.sent=Sent words
+feedback.graph.dayPartsMonthly.legend.received=Received words
+feedback.graph.dayPartsMonthly.yAxis=Percentage of all words
+feedback.graph.dayPartsMonthly.xAxis=Four parts of the day
+
+
+# responseTimesBarChart
+
+feedback.graph.responseTimeBarChart.description=Here you can see how fast you reply to your contacts and vice versa. You see the percentages of all your responses and the replies from your contacts that took place in the specified time. Responses are messages sent directly after a message from someone else. You can see what percentage of your responses you sent or received quicker than after 1 minute, after 1-2 minutes, 3-5 minutes, 6-15 minutes, 16-30 minutes, 31-60 minutes, and slower than 60 minutes. The bar for > 60 minutes includes longer breaks in the conversation. Click <a style="font-weight:bold" href="#responseTimeBarChartExplanation" data-toggle="modal" data-target="#responseTimeBarChartExplanation">HERE</a> to see an explanation with an example.
+feedback.graph.responseTimeBarChart.legend.donor=Your Response Times
+feedback.graph.responseTimeBarChart.legend.friends=Contacts Response Times
+feedback.graph.responseTimeBarChart.yAxis=Percentage of all responses
+feedback.graph.responseTimeBarChart.xAxis=Time until response
+feedback.graph.responseTimeBarChart.example.image=images/feedback_example_responseTimeBarChart_english.svg
+feedback.graph.responseTimeBarChart.example.text=<p><b>(1)</b> In this example you can see that more than 40% of all replies were sent and received in under a minute. Just under 30% of all replies were sent in 1-2 minutes and just under 30% of all replies were received in 1-2 minutes. I.e. a total of around 70% of all sent replies were sent in less than two minutes and around 70% of all received replies were received in less than two minutes.</p><p><b>(2)</b> Click this icon to download the graph.</p>
+
+
+# responseTimeBarChart monthly
+
+feedback.graph.responseTimeBarChartMonthly.description=Here you see <u>per month</u> your response times. So, the figure shows the percentage of responses (i.e. a message that you sent after a message from a contact) that took place in the specified amount of time. You can see what percentage of your responses you sent quicker than after 1 minute, after 1-2 minutes, 3-5 minutes, 6-15 minutes, 16-30 minutes, 31-60 minutes, and slower than 60 minutes. The bar for > 60 minutes includes longer breaks in the conversation.
+feedback.graph.responseTimeBarChartMonthly.legend.donor=Your Response Times
+feedback.graph.responseTimeBarChartMonthly.legend.friends=Contacts Response Times
+feedback.graph.responseTimeBarChartMonthly.yAxis=Percentage of all responses
+feedback.graph.responseTimeBarChartMonthly.xAxis=Time until response
+
+
+# breaksInConv plot
+
+feedback.graph.breaksInConv.description=This graph shows for the selected chat per month the longest consecutive period in days, in which no message was written in this chat. Click <a style="font-weight:bold" href="#breaksInConvExplanationModal" data-dismiss="modal" data-toggle="modal" data-target="#breaksInConvExplanationModal">HERE</a> to see an explanation with an example.
+feedback.graph.breaksInConv.yAxis=Longest period in days without a message
+feedback.graph.breaksInConv.days=Day/s
+feedback.graph.breaksInConv.example.image=images/feedback_example_breaksInConv_english.svg
+feedback.graph.breaksInConv.example.text=<p class="text-left"><b>(1)</b> In this example, in the on the top left selected chat, the longest periods without contact in this first period were mostly under 5 days. For example, in January 2019 (the first month), the length of the longest period without a message is less than 5 days. I.e. in that month, there was no time in the chat when not a single message was written for more than 5 days.</p><p class="text-left"><b>(2)</b> In contrast to (1), the lengths of the conversation pauses are already significantly longer in this area. In some months the longest period without a message is about 10 days. In two months in this time period, there was no activity in this chat for almost 20 days straight.</p><p class="text-left"><b>(3)</b> A dot is visible here, showing that there was not a single message in the selected chat for the whole of July 2021.</p><p class="text-left"><b>(4)</b> Click this icon to download the graph.</p>
+
+
+
+
+# provided by Astrid
+
+feedback.graph.loading=Loading graph...
+feedback.buttons.complete-survey.caption=Complete questionnaires
+
+
+# data protection page
+
+
+
+data-protection.title=Data protection
+
+
+data-protection.technical-details.title=Data Protection Notice - Anonymous usage of website
+data-protection.technical-details.body1=During the access and use of the website, no private information will be saved. If you access our website, your browser will transmit your IP address to our server in order to establish communication via the Internet. Your IP address will be saved but modified in order to eliminate any chance of identification.
+data-protection.technical-details.body2=When calling up our website the following technical data will be transmitted: Name of accessed file; date and time of visit; transmitted data volume; notification whether the transfer was successful; web address, from which the data was accessed (Referrer URL); operating system as well as browser type (User Agent string); IP address (will only be saved in modified form)
+data-protection.technical-details.body3=At the end of your session, i.e. after leaving our website or upon closing your browser, this information is automatically deleted and will not be saved (e.g. in log files)
+data-protection.technical-details.body4=This website uses cookies in order to allow technical functionality and a smooth user experience. Cookies are small text files with information about the use of specific services, such as ours, which are stored on your device locally if you give permission through your browser settings. Cookies cannot execute programs or transmit viruses. This website is only using session cookies, which save information during the ongoing session but are deleted once the session finishes. No identification of your person is possible through these cookies.
+
+
+data-protection.participation.title=Data Protection Notice - Participation in the study
+# now get basically all the text from the consent page...
+
+data-protection.participation.usage.title=Usage of data
+data-protection.participation.usage.body=The data and results of these surveys will be published in scientific journals. The published data will be anonymous, meaning that it cannot be associated with individuals. The fully anonymized data will be uploaded to a research data repository and qualified scientists will be granted access.
+
+
+# Text appearing on multiple pages
+
+
+
+language.current=ENG
+language.options.ger=Deutsch
+language.options.eng=English
+language.options.am=Հայերեն
+
+
+footer.title=Do you have your data ready?
+footer.projectNumber=Project No.: 01IS20046
+
+
+browser-warning.text=You are using an unsupported browser. The page may not appear or work correctly as a result. Please use the latest version of Chrome or Firefox to view this page.
+
+
+reportProblem.button=Report Problem
+reportProblem.next=Continue
+reportProblem.image=images/problemReport_eng.png
+reportProblem.title=Problem Report and Suggestions
+reportProblem.body=If you encounter a problem while using our application or you have other recommendations and feedback for us, please use the "Report Problem" button at the top right of the page. We are continuously working to improve the application.<br> Thank you!
+
+
+data-storage.body1_html=<em>Data Donation: </em>When donating your interaction data, we extract metadata (e.g. length and timestamp of message as well as pseudonyms of conversation participants) and no actual contents (e.g. message text or name of message sender). To ensure that, we anonymize your data client-side, meaning that your private data is anonymized locally and does not leave your device. This means that we will never see the content of your conversations. Before uploading, we will show you a preview of the data so that you can verify it is sufficiently anonymous.
+data-storage.body2_html=<em>Questionnaires: </em>You first fill out questionnaires about your demographic information. You can then carry out the data donation and receive feedback. Questionnaire data is also collected completely anonymously using <a target="_blank" href="https://www.limesurvey.org/support/faq/39-data-protection-and-policy">LimeSurvey</a>.
+
+
+
+
+links.learn-more=Learn more
+links.instructions=Start
+links.donation-info=Donate data
+links.donate=Yes, participate now
+links.data-protection=Data Protection
+links.imprint=Imprint
+links.reportProblem=https://survey.mbp.tf.uni-bielefeld.de/index.php?r=survey/index&sid=486423&lang=en
+
+
+yes=Yes
+no=No
+
+
+actions.previous=Back
+actions.next=Continue
+
+
+# Data source specific text
+
+
+
+whatsapp.instructions.p1.title=What type of device should I use?
+whatsapp.instructions.p1.body=You need your smartphone, on which you use WhatsApp. Please make sure that you are storing the data on a device that no one but you has access to.
+whatsapp.instructions.p2.title=Which chats should I choose?
+whatsapp.instructions.p2.body=From time to time most people discuss important matters with others and we need people we can rely on for help. They may be family, friends, or people who have really helped you - <b>we are interested in the chats with the people you are most likely to talk to about really important things in your life.</b> <br> <br><b>Please select 5-7 chats with people with whom you discuss important things in your life (group chats are also possible).</b>
+whatsapp.instructions.p3.title=How can I delete my data from my device?
+whatsapp.instructions.p3.body=We strongly recommend that you delete your original data (chat files) from your device and from your e-mail system (inbox and sent) after completing the donation. Note that simply deleting the files may not be enough to permanently remove the data from your device. Further information on the permanent deletion of files can be found <a target="_blank" href="https://safecomputing.umich.edu/protect-yourself/prepare-devices-disposal/securely-delete-files">on the website of the University of Michigan</a>.
+
+
+whatsapp.description_html=<i>Note: The chat export function is not supported by all WhatsApp versions! <strong> Exporting and saving WhatsApp data does not work with the WhatsApp web version. Also, on different Android versions, you may not be able to store your data locally on your device.</i></strong> <br><br>From time to time, most people discuss important matters with other people, and we need people we can depend on for help. These can be family, friends, or people who have been really helpful to you – what we are interested in are the ones that you are most likely to talk about really important matters in your life. <br><br>Please choose <strong>5</strong> chats with people with whom you discuss important matters in your life (group chats are possible too). Please bear in mind that the chats can only be downloaded one after the other. Multiple selection of chats is currently not supported.
+whatsapp.external-documentation_html=The official documentation on how to download your data can be found here for <a target="_blank" href="https://faq.whatsapp.com/618575946635920/?cms_platform=iphone&helpref=platform_switcher" target="_blank">iOS</a> or <a target="_blank" href="https://faq.whatsapp.com/en/android/23756533" target="_blank">Android</a>.
+
+
+#Download and Donation procedure: whatsapp
+
+whatsapp.donation-procedure.1=Open WhatsApp on your smartphone.
+whatsapp.donation-procedure.2=Think about which five chats are most relevant to you (e.g. close friend, partner).
+whatsapp.donation-procedure.3=Pick one of the selected chats and open it.
+whatsapp.donation-procedure.4=Click on the contact's name in the top center.
+whatsapp.donation-procedure.5=Scroll down and click on "Export chat". A window will open. Select "WITHOUT MEDIA".
+whatsapp.donation-procedure.6=Select "Mail" (envelope) and send the mail with the attached chat file to yourself. Please only send from/to a secure mail service (e.g. university mail address). Alternatively, you can send the files to your computer via Bluetooth or Airdrop.
+whatsapp.donation-procedure.7=Download the chat file from the email to your computer.
+whatsapp.donation-procedure.8=Repeat the steps 3-7 for all chats.
+whatsapp.instruction.gif=whatsapp_eng.mp4
+whatsapp.instruction.gifiOS=whatsapp_eng_iOS.mp4
+whatsapp.instruction.gifAndroid=whatsapp_eng_android.mp4
+whatsapp.instruction.gif.subtitle.iOS=This is the chat export process on an iPhone.
+whatsapp.instruction.gif.subtitle.android=This is the chat export process on an Android device. The process may vary on different devices.
+whatsapp.logo=w-logo.svg
+
+
+facebook.instructions.p1.title=What type of device should I use?
+facebook.instructions.p1.body=Please make sure that you are storing the data on a device that no one but you has access to. Because the amount of data for Facebook data donations can be quite large, we recommend using a computer.
+facebook.instructions.p2.title=How long does the data export from Facebook take?
+facebook.instructions.p2.body=The data is requested with just a few clicks on Facebook (see the instructions below). You will receive a notification from Facebook as soon as the data is available for download and can then start participating in the study.
+facebook.instructions.p3.title=How can I delete my data from my device?
+facebook.instructions.p3.body=We strongly recommend that you delete your original data after completing the donation. Note that simply deleting the files may not be enough to permanently remove the data from your device. Further information on the permanent deletion of files can for example be found <a target="_blank" href="https://safecomputing.umich.edu/protect-yourself/prepare-devices-disposal/securely-delete-files">on the website of the University of Michigan</a> or <a target="_blank" href="https://wethegeek.com/best-file-data-shredder-apps-to-permanently-delete-data-from-android/">wethegeek.com</a> and <a target="_blank" href="https://appletoolbox.com/how-to-delete-files-permanently-from-the-files-app-on-iphone-and-ipad/">appletoolbox.com</a>.
+
+
+
+
+facebook.description_html=Make a request to Facebook to download your Facebook data. You will receive a notification from Facebook once the data is available for download and can then start participating in the study. <strong>We recommend using a computer if donating from Facebook as the data size may be relatively large.</strong>
+facebook.external-documentation_html=The official documentation on how to download your data can be found <a target="_blank" href="https://www.facebook.com/help/contact/2032834846972583" target="_blank">here</a>.
+
+
+#Download and Donation procedure: Facebook
+
+facebook.donation-procedure.1=Open Facebook and log in.
+facebook.donation-procedure.2=In the top right corner, click on the “Your Profile” button and Select “Settings and privacy”.
+facebook.donation-procedure.3=Select “Settings”. Then select "Your Facebook information" in the navigation bar on the left.
+facebook.donation-procedure.4=On the "Your Facebook information" page click on "Download your information". A pop-up appears.
+facebook.donation-procedure.5=Click on “Request a download”. Then choose “Select types of information”.
+facebook.donation-procedure.6=In the interest of data minimization, please first deselect all categories. Then, tick the fields “Messages” and "Profile information". Then click “Next”.
+facebook.donation-procedure.7=Pick a date range: We encourage you to <b>request the data for 1 year</b> but a shorter time span is possible as well.
+facebook.donation-procedure.8=Change the format from HTML to JSON. Then change the media quality from “Medium” to “Low”.
+facebook.donation-procedure.9=Click on "Submit Request". As soon as the file is ready for download, you will receive a notification from Facebook. This may take a while.
+facebook.donation-procedure.10=Scroll back up and click on the "Available Files" tab. There you should see the requested file and can download is as soon it is ready.
+facebook.instruction.gif=facebook_eng.mp4
+facebook.logo=f-logo.svg
+
+
+instagram.instructions.p1.title=What type of device should I use?
+instagram.instructions.p1.body=Please make sure that you are storing the data on a device that no one but you has access to.
+instagram.instructions.p2.title=How long does the data export from Instagram take?
+instagram.instructions.p2.body=The data is requested with just a few clicks on Instagram (see the instructions below). You will receive a notification from Instagram as soon as the data is available for download and can then start participating in the study.
+instagram.instructions.p3.title=How can I delete my data from my device?
+instagram.instructions.p3.body=We strongly recommend that you delete your original data after completing the donation. Note that simply deleting the files may not be enough to permanently remove the data from your device. Further information on the permanent deletion of files can for example be found <a target="_blank" href="https://safecomputing.umich.edu/protect-yourself/prepare-devices-disposal/securely-delete-files">on the website of the University of Michigan</a> or <a target="_blank" href="https://wethegeek.com/best-file-data-shredder-apps-to-permanently-delete-data-from-android/">wethegeek.com</a> and <a target="_blank" href="https://appletoolbox.com/how-to-delete-files-permanently-from-the-files-app-on-iphone-and-ipad/">appletoolbox.com</a>.
+
+
+
+instagram.description_html=Make a request to Instagram to download your Instagram data. You will receive a notification from Instagram once the data is available for download and can then start participating in the study.
+instagram.external-documentation_html=The official documentation on how to download your data can be found <a target="_blank" href="https://help.instagram.com/181231772500920?cms_id=181231772500920" target="_blank">here</a>.
+
+
+instagram.donation-procedure.1=Open Instagram and log in.
+instagram.donation-procedure.2=In your profile click on the "Menu" button (three lines) and select "Your activity".
+instagram.donation-procedure.3=All the way on the bottom select “Download your information” and continue to the Accounts Center.
+instagram.donation-procedure.4=Click on “Download or transfer information”.
+instagram.donation-procedure.5=Click on “Some of your information”.
+instagram.donation-procedure.6=Select “Messages” (under “Your Instagram activity”) and “Personal information” (under “Personal information”).
+instagram.donation-procedure.7=Click on "Next".
+instagram.donation-procedure.8=Pick a date range: We encourage you to <b>request the data for 1 year</b> but a shorter time span is possible as well.
+instagram.donation-procedure.9=Change the format from HTML to JSON. Then change the media quality from “Medium” to “Low”.
+instagram.donation-procedure.10=Click on "Create files". As soon as the file is ready for download, you will receive a notification from Instagram. This may take a while.
+instagram.donation-procedure.11=Scroll back up and click on the "Available downloads" tab. There you should see the requested file and can download is as soon it is ready.
+
+
+instagram.instruction.gif=instagram_eng.mp4
+instagram.logo=i-logo.svg
+
+# Imprint
+
+imprint.title=Imprint
+imprint.imprint=Universität Bielefeld<br>Universitätsstrasse 25<br>D-33615 Bielefeld<p>National (0521) 106-00<br>International ++49 521 106-00</p><p>Telefax national (0521) 106-5844<br>Telefax international +49 521 106-5844</p><p>Prefix for the University: 0521-106-...</p><p>E-Mail: post@uni-bielefeld.de<br>Internet: <a href="https://www.uni-bielefeld.de" target="_blank">www.uni-bielefeld.de</a><p>Bielefeld University is a state-supported institution bound to public law. It is officially represented by the Rektor, Prof. Dr. Ing. Gerhard Sagerer.</p>
+imprint.rsa.title=Responsible supervisory authorities
+imprint.rsa.body=Ministry of Culture and Science in North Rhine-Westphalia<br>Völklinger Straße 49<br>40221 Düsseldorf<p><strong>Value Added Tax identification number</strong><br>Pursuant to § 27 a, VAT ID: DE811307718 - according to paragraph 27 a - Finanzamt (tax office) Bielefeld Innenstadt</p>
+imprint.responsibleDona.title=Responsibility for Content of the Donation Platform Dona
+imprint.responsibleDona.body=Prof. Dr. Hanna Drimalla<br>Leiterin der AG "Multimodal Behavior Processing"<br>E-mail: drimalla@techfak.uni-bielefeld.de<br><a href="https://www.uni-bielefeld.de/fakultaeten/technische-fakultaet/arbeitsgruppen/multimodal-behavior-processing/" target="_blank">Homepage</a><br>Telephone: +49 521 106-12043<br>Telephone secretary: +49 521 106-6891<br>Room: CITEC-3.108
+imprint.responsibleCentralWebsite.title=Responsibility for Content of the Central Websites
+imprint.responsibleCentralWebsite.body=<p>Referat für Kommunikation<br> Ingo Lohuis<br>ingo.lohuis@uni-bielefeld.de</p><p>Responsibility for the content of all other Internet pages (e.g. the faculties, institutes, seminars or administrative offices) lies with the facility or author who produced or published the pages. If you have any questions about these webpages, please contact the individuals or facility/office named on the Internet page.</p><p>There are also various decentralized services on their own servers that do not belong to the domain "www.uni-bielefeld.de". These are all the responsibility of their specific operators.</p><p>URLs beginning with "http://wwwhomes.uni-bielefeld.de" lead to private or personal web pages of members of Bielefeld University. The University has no influence on their contents, and these in no way represent any official publication of Bielefeld University.</p>
+imprint.liabilityDisclaimer.title=Liability Disclaimer
+imprint.liabilityDisclaimer.body=While Bielefeld University makes every effort to ensure that the contents of its website are correct, up-to-date, and without omissions, it cannot accept liability for the accuracy and quality of its website at any given time.</p><p>The website provides hyperlinks to other external websites. The authors and distributors of these sites are responsible for their content. Bielefeld University is not liable for the content of external websites and has no influence on the content of external links. Despite carefully checking the contents when linking to external websites, the University has no liability for the content of external links. The University distances itself expressly from the content of external websites, nor does it endorse it. Course offers and services from the University are not offered on external websites.</p>
+imprint.copyright.title=Copyright
+imprint.copyright.body=The copyright and usage rights for texts, graphics, photos, design and source code lie - unless otherwise stated - with Bielefeld University. Permission is needed to distribute, use or pass on copies in digital or printed form. This does not affect "copying" the data on to a personal computer to view pages on a browser.
+imprint.photoCredits.title=Photo Credits
+imprint.photoCredits.body=All photographs remain - unless otherwise stated - copyright of Bielefeld University.

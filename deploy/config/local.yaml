@@ -1,0 +1,14 @@
+KALINKA_HOST: dona.tf.uni-bielefeld.de
+KALINKA_DB_CONFIGMAP: kalinka-db-connection
+KALINKA_DB_CREDS_SECRET_NAME: kalinka-db-credentials
+KALINKA_PORT: 9000
+DONOR_SURVEY_ENABLED: true
+DONOR_SURVEY_LINK: "https://www.soscisurvey.de/dona/"
+SOCIAL_DATA_INGESTION_ENABLED: true
+IMAGE_REPOSITORY: dona.tf.uni-bielefeld.de
+NUM_REPLICAS: 1
+
+# for local only
+DATABASE_USER: user
+DATABASE_PASSWORD: pass
+APPLICATION_SECRET: local-dummy

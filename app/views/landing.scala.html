@@ -1,0 +1,138 @@
+@(designVersion: Option[String])(implicit request: RequestHeader, messages: Messages)
+
+@mainNew("Dona - ForMe", designVersion) {
+<div class="header text-white mt-2 mx-auto p-3 pr-4 pl-4 text-center landing-header">
+    <h1 class="display-5 mb-3 landing-header-headline">@messages("landing.header.title")</h1>
+    <p class="landing-header-text text-center">@messages("landing.header.body")</p>
+</div>
+} {
+<script>
+    $(document).ready(function () {
+    });
+
+    function alertIfMobile() {
+
+        var userAgent = navigator.userAgent.toLowerCase(),
+            width = screen.availWidth,
+            height = screen.availHeight,
+            userIsOnMobileDevice = checkIfUserIsOnMobileDevice(userAgent);
+
+        if (userIsOnMobileDevice) {
+            $('#mobileAlertModal').modal("show")
+        }
+
+        function checkIfUserIsOnMobileDevice($userAgent) {
+            if ($userAgent.includes('mobi') || $userAgent.includes('tablet')) {
+                return true;
+            }
+            if ($userAgent.includes('android')) {
+                if (height > width && width < 800) {
+                    // Screen is higher than it’s wide, so we have portrait mode
+                    return true;
+                }
+                if (width > height && height < 800) {
+                    // Screen is wider than it’s high, so we have landscape mode
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+</script>
+<div class="mt-4 text-center">
+
+    @* modal for mobile alert to better use a computer *@
+    <div class="modal modalMobileAlert modal-xl" id="mobileAlertModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modalMobileAlert-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modalMobileAlert-content">
+                <div class="modal-body">
+                    <button type="button" data-dismiss="modal" class="btn modal-forward-button float-right">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="headline">@messages("landing.what.title")</h2>
+    <p class="paragraph mt-1">@messages("landing.what.body1")</p>
+    <p class="paragraph">@Html(messages("landing.what.body2"))</p>
+    <h2 class="headline mb-3">@messages("landing.why.title")</h2>
+    <div class="row">
+        <div class="col-sm">
+            <img src="@routes.Assets.at(messages(" landing.imagePath.exampleFeedback"))"
+                class="landing-column-feedback-image rounded-lg"></img>
+            <h3 class="landing-subtitle">@messages("landing.why.col1.title")</h3>
+            <p class="landing-column-text">@messages("landing.why.col1.body")</p>
+        </div>
+        <div class="col-sm">
+            <img src="@routes.Assets.at(" images/stay-anonymous-illustration.jpg")"
+                class="landing-column-image rounded-lg"></img>
+            <h3 class="landing-subtitle">@messages("landing.why.col3.title")</h3>
+            <p class="landing-column-text">@Html(messages("landing.why.col3.body_html"))</p>
+        </div>
+        <div class="col-sm">
+            <img src="@routes.Assets.at(" images/support-research-illustration.jpg")"
+                class="landing-column-image rounded-lg"></img>
+            <h3 class="landing-subtitle">@messages("landing.why.col2.title")</h3>
+            <p class="landing-column-text">@Html(messages("landing.why.col2.body_html"))</p>
+        </div>
+
+        <div class="mx-3 mt-4">
+            <h2 class="headline">@messages("learn-more.how-to-participate.title")</h2>
+            <p class="paragraph mt-1">@messages("learn-more.how-to-participate.body")</p>
+            <h2 class="headline">@messages("learn-more.how-to-cancel.title")</h2>
+            <p class="paragraph mt-1">@messages("learn-more.how-to-cancel.body")</p>
+        </div>
+    </div>
+    <h3 class="headline">@messages("donation-info.title")</h3>
+    <div class="row">
+        <div class="col-sm my-auto">
+            <img src="@routes.Assets.at(messages(" landing.imagePath.donationProcedure1"))"
+                class="img-fluid donation-info-image">
+        </div>
+        <div class="col-sm my-auto">
+            <p class="paragraph text-left">@Html(messages("donation-info.data-request"))</p>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm my-auto">
+            <img src="@routes.Assets.at(messages(" landing.imagePath.donationProcedure2"))"
+                class="img-fluid donation-info-image">
+        </div>
+        <div class="col-sm my-auto">
+            <p class="paragraph text-left">@Html(messages("donation-info.anonymisation"))</p>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm my-auto">
+            <img src="@routes.Assets.at(messages(" landing.imagePath.donationProcedure3"))"
+                class="img-fluid donation-info-image">
+        </div>
+        <div class="col-sm my-auto">
+            <p class="paragraph text-left">@Html(messages("donation-info.storage"))</p>
+        </div>
+
+    </div>
+    <div>
+        <p class="serif-text wide-top-margin"><em>@Html(messages("landing.contact.body_html"))</em></p>
+    </div>
+    <div class="mt-5">
+        @* <button class="btn btn-outline footer-forward-button text-center" data-toggle="modal"
+            data-target="#reportProblem-dialog">@messages("links.instructions")</button> *@
+        @footer(nextLink = Some("/instructions"), nextCustomText = Some(messages("links.instructions")))()
+    </div>
+
+    <div class="modal fade" id="reportProblem-dialog" role="dialog">
+        @reportProblem()
+    </div>
+
+</div>
+
+} {
+<a role="button" href="@messages(" links.reportProblem")" target="_blank"
+    class="btn report-problem-button-footer footer-links-above ml-4">@messages("reportProblem.button")</a>
+} {
+@languageSelectButton()
+}

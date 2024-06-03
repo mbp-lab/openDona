@@ -1,0 +1,9 @@
+# On each change here, update variable 'cacheImageVersion' in jenkinsfile/build.groovy
+FROM hseeberger/scala-sbt:8u212_1.2.8_2.13.0
+
+LABEL version="1.0"
+
+WORKDIR /workspace
+COPY build.sbt ./build.sbt
+COPY project ./project
+RUN sbt update

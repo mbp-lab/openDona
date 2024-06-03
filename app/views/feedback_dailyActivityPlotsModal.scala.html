@@ -1,0 +1,87 @@
+@import play.api.libs.json.JsValue
+@import play.api.libs.json.Json
+@import models.api._
+
+@import models.domain.DataSourceDescription
+@import models.domain.DonationDataSourceType.DonationDataSourceType
+
+@(dataSource: String)(implicit request: RequestHeader, messages: Messages)
+
+<div class="modal-dialog modal-xl modalMaxWidth">
+    <div class="modal-content">
+        <div class="modal-header bgmain">
+            <h3 class="data-protection-headline">@Html(messages("feedback.moreAbout.dailyActivityTimes.title"))</h3>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+
+            <div
+            id="@{
+                dataSource.toString
+            }ModalContainer"
+            >
+                @showDayPartsActivityOverallPlot(dataSource)
+                @showAnimatedDayPartsActivityPlot(dataSource)
+            </div>
+
+            <div class="d-flex justify-content-end align-items-center">
+                <button type="button" class="btn footer-backward-button consent-button" data-dismiss="modal">@messages("consent.buttons.close.caption")</button>
+
+            </div>
+        </div>
+    </div>
+
+    @showExplanationText(body: String) = {
+        <div style="margin-top: 3em"></div>
+        <div class="card-deck feedback-stats-deck">
+
+            <div class="card top feedback-stats-card">
+                <p class="insights-text text-center">
+                @Html(body)
+                </p>
+            </div>
+
+        </div>
+    }
+
+    @showAnimatedDayPartsActivityPlot(name: String) = {
+    @showExplanationText(messages("feedback.graph.dayPartsMonthly.description"))
+
+        <div id="@{
+            name
+        }DayPartsActivityPlot" class="d-none"
+        data-x-axis="@messages("feedback.graph.dayPartsMonthly.xAxis")"
+        data-y-axis="@messages("feedback.graph.dayPartsMonthly.yAxis")"
+        data-sent-trace-name="@messages("feedback.graph.dayPartsMonthly.legend.sent")"
+        data-received-trace-name="@messages("feedback.graph.dayPartsMonthly.legend.received")"
+        data-description-yearMonth="@messages("feedback.graph.yearMonth")"
+        >
+            <div class="card h-100">
+                <div class="m-auto">@messages("feedback.graph.loading")</div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    }
+
+    @showDayPartsActivityOverallPlot(name: String) = {
+    @showExplanationText(messages("feedback.graph.dayPartsOverall.description"))
+
+        <div id="@{
+            name
+        }DayPartsActivityOverallPlot" class="d-none"
+        data-x-axis="@messages("feedback.graph.dayPartsOverall.xAxis")"
+        data-y-axis="@messages("feedback.graph.dayPartsOverall.yAxis")"
+        data-sent-trace-name="@messages("feedback.graph.dayPartsOverall.legend.sent")"
+        data-received-trace-name="@messages("feedback.graph.dayPartsOverall.legend.received")"
+        >
+            <div class="card h-100">
+                <div class="m-auto">@messages("feedback.graph.loading")</div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    }
+
+
+</div>

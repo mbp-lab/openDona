@@ -1,0 +1,89 @@
+@import play.api.libs.json.JsValue
+@import play.api.libs.json.Json
+@import models.api._
+
+@import models.domain.DataSourceDescription
+@import models.domain.DonationDataSourceType.DonationDataSourceType
+
+@(dataSource: String, data: Map[String, GraphData])(implicit request: RequestHeader, messages: Messages)
+
+<div class="modal-dialog modal-xl modalMaxWidth">
+    <div class="modal-content">
+        <div class="modal-header bgmain">
+            <h3 class="data-protection-headline">@Html(messages("feedback.moreAbout.responseTimes.title"))</h3>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+
+            <div
+            id="@{
+                dataSource.toString
+            }ModalContainer"
+            style="width: 100%"
+            >
+                @showAnimatedResponseTimeBarChart(dataSource)
+            </div>
+
+
+            <div class="d-flex justify-content-end align-items-center">
+                <button type="button" class="btn footer-backward-button consent-button" data-dismiss="modal">@messages("consent.buttons.close.caption")</button>
+
+            </div>
+        </div>
+    </div>
+
+
+    @showResponseTimePlot(name: String) = {
+    @showExplanationText("Lorem ipsum dolor sit amet, consetetur sadipscing elitr,"
+                + "sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+                + "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.")
+
+
+        <div id="@{
+            name
+        }ResponseTimePlot"></div>
+        <div class="clearfix"></div>
+    }
+
+
+    @showAnimatedResponseTimeBarChart(name: String) = {
+    @showExplanationText(messages("feedback.graph.responseTimeBarChartMonthly.description"))
+
+        <div id="@{
+            name
+        }AnimatedResponseTimeBarChart"
+        data-x-axis="@messages("feedback.graph.responseTimeBarChartMonthly.xAxis")"
+        data-y-axis="@messages("feedback.graph.responseTimeBarChartMonthly.yAxis")"
+        data-legend-donor="@messages("feedback.graph.responseTimeBarChartMonthly.legend.donor")"
+        data-legend-friends="@messages("feedback.graph.responseTimeBarChartMonthly.legend.friends")"
+        data-description-yearMonth="@messages("feedback.graph.yearMonth")"
+        ></div>
+        <div class="clearfix"></div>
+    }
+
+    @showBreaksInConvPlot(name: String) = {
+    @showExplanationText(messages("feedback.graph.breaksInConv.description"))
+        <div id="@{
+            name
+        }BreaksInConvPlot"
+        data-y-axis="@messages("feedback.graph.breaksInConv.yAxis")"
+        data-days-name="@messages("feedback.graph.breaksInConv.days")"
+        data-reset-view="@messages("feedback.graph.resetView")"
+        ></div>
+        <div class="clearfix"></div>
+    }
+
+
+    @showExplanationText(body: String) = {
+        <div style="margin-top: 3em"></div>
+        <div class="card-deck feedback-stats-deck">
+
+            <div class="card top feedback-stats-card">
+                <p class="insights-text text-center">
+                @Html(body)
+                </p>
+            </div>
+
+        </div>
+    }
+</div>

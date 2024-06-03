@@ -1,0 +1,1 @@
+CREATE TYPE donation_status AS ENUM('notstarted', 'pending', 'complete', 'deleted');

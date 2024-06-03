@@ -1,0 +1,369 @@
+@import models.domain.DataSourceDescription
+
+@(form: Form[SocialDataForm.SocialFormData], donorId: String, dataSourceDescriptions: List[DataSourceDescription])(implicit request: RequestHeader, messages: Messages)
+
+@displayJsonParseError(maybeErrorString: Option[String]) = @{
+    maybeErrorString match {
+        case Some(error) =>
+            <div class="alert alert-danger">{error}</div>
+        case None =>
+    }
+}
+
+@mainNew("Dona - ForMe")() {
+    <hr class="m-0 d-block d-md-none" />
+    <input type="hidden" id="donor_id" value="@{
+        donorId
+    }">
+    <input type="hidden" id="allAnonymizedData">
+
+    <div class="flex-grow-1 w-100">
+        <div id="i18n-support"
+        data-anonymisation-successful="@messages("donation.successful")"
+        data-info-preview-data-body1="@messages("donation.preview-data.body1")"
+        data-please-wait="@messages("donation.sendData.wait")"
+        data-remove="@messages("donation.select-data.remove")"
+        data-error="@messages("donation.error")"
+        data-donor="@messages("donation.anonymisation.donor")"
+        data-friend="@messages("donation.anonymisation.friend")"
+        data-friend-initial="@messages("donation.anonymisation.friendInitial")"
+        data-chat-initial-w="@messages("donation.anonymisation.chatInitialW")"
+        data-chat-initial-f="@messages("donation.anonymisation.chatInitialF")"
+        data-chat-initial-i="@messages("donation.anonymisation.chatInitialI")"
+        data-only-you="@messages("donation.friendsMapping.onlyYouInConv")"
+        data-and-more-contacts="@messages("donation.friendsMapping.moreFriends")"
+        data-chat="@messages("donation.friendsMapping.chat")"
+        data-chat-with="@messages("feedback.graph.chatWith")"
+        data-system="@messages("donation.anonymisation.system")"
+        data-sender="@messages("donation.preview-data.sender")"
+        data-receiver="@messages("donation.preview-data.receiver")"
+        data-word-count="@messages("donation.preview-data.word-count")"
+        data-length-seconds="@messages("donation.preview-data.length-seconds")"
+        data-timestamp="@messages("donation.preview-data.timestamp")"
+        data-message="@messages("donation.preview-data.message")"
+        data-group-conversation="@messages("donation.preview-data.group-conversation")"
+        data-voice-message="@messages("donation.preview-data.voice-message")"
+        data-previous="@messages("actions.previous")"
+        data-next="@messages("actions.next")"
+        data-yes="@messages("yes")"
+        data-no="@messages("no")"
+        data-error-no-profile="@messages("donation.errors.no-profile")"
+        data-error-no-alias="@messages("donation.errors.no-alias")"
+        data-error-not-enough-chats="@Html(messages("donation.errors.not-enough-chats_format"))"
+        data-error-same-files="@messages("donation.errors.same-file")"
+        data-error-empty-or-onecontact="@messages("donation.errors.emptyOrJustOnePerson")"
+        data-error-no-messages-time-period="@messages("donation.errors.no-messages-time-period")"
+        data-error-dates-no-sense="@messages("donation.errors.dates-no-sense")"
+        data-error-not-enough-months="@messages("donation.errors.dates-not-enough-months")"
+        >
+        </div>
+        <div class=" w-100" id="anonymizationTextHeadlines">
+            <div class="headline text-center mb-3">@messages("donation.select-data.title")</div>
+            <p class="paragraph"> @messages("donation.select-data.body1") </p>
+            <p class="paragraph">@messages("donation.select-data.body2")</p>
+        </div>
+
+        <div class="w-100">
+            <div class="accordion" id="donationAccordion">
+            @for(dataSourceDescription <- dataSourceDescriptions) {
+                @donateDataCollapse(dataSourceDescription)
+            }
+            </div>
+            @for(dataSourceDescription <- dataSourceDescriptions) {
+                <div class="modal fade" id="dataPreview-@{dataSourceDescription.name.toString}" role="dialog">
+                @anonymisationDataPreviewModal(dataSourceDescription)
+                </div>
+                }
+
+                <!-- Modal for choosing facebook chats to show feedback for -->
+            <div class="modal fade" id="chooseFacebookChatsModal" role="dialog">
+            @anonymisation_chatSelectionModal("Facebook")
+            </div>
+
+                <!-- Modal for choosing instagram chats to show feedback for -->
+            <div class="modal fade" id="chooseInstagramChatsModal" role="dialog">
+            @anonymisation_chatSelectionModal("Instagram")
+            </div>
+            </div>
+        <div class="mt-5 w-100 d-none" align="center" id="spinner-submit-div">
+            <div id="spinner-submit" class="spinner-border" style="width: 6rem; height: 6rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <h5 class="mt-4">
+                <b>@messages("donation.anonymisation.loading")</b>
+            </h5>
+            <div id="show-if-loading-long" class="d-none">
+            <h5 class="mt-5 serif-text">@messages("donation.anonymisation.loading.tooLong.title")</h5>
+            <ul class="serif-text text-left mt-4">
+                <li>@messages("donation.anonymisation.loading.tooLong.issue.1")</li>
+                <li>@messages("donation.anonymisation.loading.tooLong.issue.2")</li>
+                <li>@messages("donation.anonymisation.loading.tooLong.issue.3")</li>
+                <li>@messages("donation.anonymisation.loading.tooLong.issue.4")</li>
+                <li>@messages("donation.anonymisation.loading.tooLong.issue.5")</li>
+                <li>@Html(messages("donation.anonymisation.loading.tooLong.issue.6"))</li>
+            </ul>
+            </div>
+        </div>
+        </div>
+
+            <!-- Modal for choosing correct username -->
+        <div class="modal fade" id="usernameModal" tabindex="-1" role="dialog" aria-labelledby="usernameModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">@messages("donation.anonymisation.chooseUsername")</h5>
+                    </div>
+                    <div class="modal-body" id="usernameModalBody">
+                        <select class="custom-select" id="usernameSelect" multiple>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="usernameSelectButton" type="button" class="btn btn-primary" data-dismiss="modal">
+                            OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="justify-content-center mx-0 mt-5" id="backAndForwardButtons">
+        <div class="row justify-content-center mx-0 d-none" id="stillAnErrorSomewhere">
+            <p class="text-danger">@messages("donation.errors.somewhereError")</p>
+        </div>
+        <div class="row mx-0">
+            <div class="col justify-content-center text-center">
+            <a class="btn footer-backward-button center" href="/instructions">@messages("actions.previous")</a>
+            </div>
+            <div class="col justify-content-center text-center">
+            @helper.form(routes.SocialDataDonationController.postData()) {
+                @helper.CSRF.formField
+                <input type='hidden' name='inputJson' id='inputJson' />
+                <input
+                type='submit'
+                class="btn footer-forward-button mb-0"
+                id='submit-de-identified'
+                disabled="true"
+                autocomplete="off"
+                value="@messages("donation.submit")"
+                />
+            }
+            </div>
+        </div>
+    </div>
+
+    </div>
+} {
+}{
+    @headerButtons()
+}
+
+@donateDataCollapse(dataSourceDescription: DataSourceDescription) = {
+    <div class="card mb-3" style="border-radius: 16px;">
+        <div class="text-center" id="@{
+            dataSourceDescription.name.toString
+        }Heading">
+            <h2 class="mb-0">
+                <button class="btn donate-collapse-button selectorsAndInputs" type="button" data-toggle="collapse" data-target="#@{
+                    dataSourceDescription.name.toString
+                }Collapse">
+                        @if(dataSourceDescription.logo.isDefined) {
+                            <img class="logo" src="@routes.Assets.at(s"images/dataSourceImages/${dataSourceDescription.logo.get}")">
+                        }
+                        @{dataSourceDescription.name.toString}
+                        @messages("donation.select-data.donation")
+                </button>
+            </h2>
+        </div>
+
+        <div id="@{
+            dataSourceDescription.name.toString
+        }Collapse" class="collapse" aria-labelledby="headingOne" data-parent="#donationAccordion">
+            <div class="card-body">
+
+                <div>
+                    <h5 class="m-4"><b>@messages("donation.choose-files-here")</b></h5>
+                    <div class="custom-file mb-1 donation-file-selector">
+                        <input
+                        id="@{
+                            dataSourceDescription.name.toString
+                        }"
+                        multiple
+                        type="file"
+                        class="custom-file-input donation-file-selector selectorsAndInputs"
+                            @if(dataSourceDescription.parsingDetails.specificFileExtensionAccepted.isDefined) {
+                                accept="@{
+                                    dataSourceDescription.parsingDetails.specificFileExtensionAccepted
+                                }"
+                                }
+                        >
+                        <label class="custom-file-label" for="customFile" data-browse="@messages("donation.select-data.input2")">@messages("donation.select-data.input1")</label>
+                    </div>
+
+                    <div id="donationprogress-@{dataSourceDescription.name.toString}" class="donationprogress mb-2 d-none">
+                        <span class="highlighted-instructions">@messages("donation.processing")</span>
+                        <div class="progress">
+                            <div class="progress-bar center-block progress-bar-striped progress-bar-animated"
+                            style="width: 100%"
+                            role="progressbar"
+                            aria-valuenow="100"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
+                            @messages("donation.be-patient")
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul
+                    class="list-group show-on-anonymisation-success-@{dataSourceDescription.name.toString} d-none"
+                    style="overflow-y: scroll; max-height: 250px;"
+                    id="@{
+                        dataSourceDescription.name.toString
+                    }FileList"
+                    >
+                    </ul>
+
+                    <div class="show-on-anonymisation-success-@{dataSourceDescription.name.toString} d-none mb-4">
+                        <h5 class="m-4"><b>@messages("donation.choose-period")</b></h5>
+                        <div class="row mt-0 w-100" align="center">
+                        <div class="col">
+                            <label for="startDate-@{dataSourceDescription.name.toString}">@messages("donation.select-date.start")</label>
+                            <input type="date" id="startDate-@{dataSourceDescription.name.toString}" class="date-selection m-2 selectorsAndInputs" name="startdate">
+                        </div>
+                        <div class="col">
+                            <label for="endDate-@{dataSourceDescription.name.toString}">@messages("donation.select-date.end")</label>
+                            <input type="date" id="endDate-@{dataSourceDescription.name.toString}" class="date-selection m-2 selectorsAndInputs" name="enddate">
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-0 w-100" align="center">
+                    <div class="p-2 pr-sm-4 pl-sm-4 pt-sm-4 p-lg-2" align="center">
+                        <div id="error-@{dataSourceDescription.name.toString}" class="alert alert-danger d-none" style="border-radius: 16px;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-0 w-100" align="center">
+                <div id="spinner-@{dataSourceDescription.name.toString}" class="spinner-border d-none" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                </div>
+                <div class="show-on-anonymisation-success-@{dataSourceDescription.name.toString} order-9 w-100 d-none">
+                    <h5 class="m-4"><b>@messages("donation.aliases-overview")</b></h5>
+                    <div class="w-100 text-align-center show-on-anonymisation-success-@{dataSourceDescription.name.toString}" align="center">
+
+                        <div class="container-fluid show-on-anonymisation-success-@{dataSourceDescription.name.toString} alert-info" style="border-radius: 16px;">
+                            @if(dataSourceDescription.name.toString == "Facebook") {
+                                <p style="color: darkblue;">@Html(messages("donation.friendsMapping.subtitle.facebook"))</p>
+                            } @if(dataSourceDescription.name.toString == "WhatsApp") {
+                                <p style="color: darkblue;">@Html(messages("donation.friendsMapping.subtitle.whatsapp"))</p>
+                            } @if(dataSourceDescription.name.toString == "Instagram") {
+                            <p style="color: darkblue;">@Html(messages("donation.friendsMapping.subtitle.instagram"))</p>
+                            }
+
+                            @if(dataSourceDescription.name.toString == "Facebook") {
+                                <p style="color: darkblue;"><i>@Html(messages("donation.friendsMapping.onlySeven"))</i></p>
+                                }
+                            <div class="show-on-anonymisation-success-@{dataSourceDescription.name.toString}" style="overflow: scroll;
+                                height: 300px;
+                                margin-top: 10px;">
+
+
+                                    @Html("<span id=\"display-userIDMapping-" + dataSourceDescription.name.toString + "\"></span>")
+                                @if(dataSourceDescription.name.toString == "Facebook") {
+                                    <button class="btn btn-outline text-center selectorsAndInputs" id="openChooseFacebookChatsModalButton">
+                                        <h5 class="mb-3"><i><b>@messages("donation.anonymisation.chatSelection.clickHereToSelect")</b></i></h5>
+                                    </button>
+                                }
+                                @if(dataSourceDescription.name.toString == "Instagram") {
+                                    <button class="btn btn-outline text-center selectorsAndInputs" id="openChooseInstagramChatsModalButton">
+                                        <h5 class="mb-3"><i><b>@messages("donation.anonymisation.chatSelection.clickHereToSelect")</b></i></h5>
+                                    </button>
+                                }
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <h5 class="m-4"><b>@messages("donation.preview-data.title")</b></h5>
+                    <div class="w-100 text-align-center show-on-anonymisation-success-@{dataSourceDescription.name.toString}" align="center">
+                    <button class="btn btn-outline text-center selectorsAndInputs" data-toggle="modal" data-target="#dataPreview-@{dataSourceDescription.name.toString}">
+                        <h5 class="mb-3"><i><b>@messages("donation.preview-data.button")</b></i></h5>
+                    </button>
+                    </div>
+
+                    <div class="mt-0 w-100" align="center">
+                        <div class="p-2 pr-sm-4 pl-sm-4 pt-sm-4 p-lg-2" align="center">
+                            <div id="success-@{dataSourceDescription.name.toString}" class="alert alert-success d-none" style="border-radius: 16px;">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+}
+
+@populateDataSourceList(dataSourceDescription: DataSourceDescription) = {
+
+    <div class="card">
+
+        <label class="card-header donation-file-selector btn btn-link w-100" >
+            <input id="@{
+                dataSourceDescription.name.toString
+            }"
+            multiple
+            type="file"
+            class="donation-file-selector d-none"
+                @if(dataSourceDescription.requiresAlias) {
+                    data-requires-alias="true"
+                }
+                @if(dataSourceDescription.parsingDetails.specificFileExtensionAccepted.isDefined) {
+                    accept="@{
+                        dataSourceDescription.parsingDetails.specificFileExtensionAccepted
+                    }"
+            }
+            />
+            <span id="@{
+                dataSourceDescription.name.toString
+            }SelectText">
+                @if(dataSourceDescription.logo.isDefined) {
+                    <img class="logo mr-3" src="@{
+                        dataSourceDescription.logo
+                    }">
+                }
+                <span>@{
+                    dataSourceDescription.name.toString
+                }</span>
+            </span>
+
+            <input id="@{
+                dataSourceDescription.name
+            }AliasInput"
+            type="text"
+            minlength="0"
+            maxlength="100"
+            size="12"
+                @if(dataSourceDescription.requiresAlias) {
+                    placeholder="@messages("donation.alias")"
+                    class="ml-5 mbt-2 w-25"
+                    data-toggle="tooltip"
+                    data-placement="auto"
+                    title="@messages("donation.errors.no-alias")"
+                } else {
+                    placeholder="@messages("donation.alias-not-required")"
+                    disabled="true"
+                    class="ml-5 mbt-2 w-25 disabled-input"
+                    }
+            >
+        </label>
+    </div>
+
+}
