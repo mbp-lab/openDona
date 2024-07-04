@@ -9,8 +9,10 @@ GET     /learn-more                    controllers.SocialDataDonationController.
 GET     /impressum                     controllers.SocialDataDonationController.impressum
 GET     /instructions                  controllers.SocialDataDonationController.instructions
 POST    /consent-to-study              controllers.SocialDataDonationController.consentToStudy
+GET     /your-donor-id                 controllers.SocialDataDonationController.yourDonorID
 GET     /data-donation                 controllers.SocialDataDonationController.showDataDonationPage
 POST    /data-upload                   controllers.SocialDataDonationController.postData
+GET     /redirect-to-first-survey      controllers.SocialDataDonationController.redirectToFirstSurvey
 
 GET     /change-language/:language     controllers.SocialDataDonationController.changeLanguage(language: String)
 

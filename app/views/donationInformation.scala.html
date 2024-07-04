@@ -1,4 +1,4 @@
-@()(implicit request: RequestHeader, messages: Messages)
+@(donorIdMethod: String)(implicit request: RequestHeader, messages: Messages)
 
 @mainNew("Dona - ForMe")() {
     <div class="bgwhite mt-4 text-center align-content-center">
@@ -29,7 +29,7 @@
         </div>
     </div>
 <div class="modal fade" id="consent-dialog"  role="dialog">
-    @consent()
+    @consent(donorIdMethod)
 </div>
 } {
 @footer(title = Some(messages("footer.title")), previousLink = Some("/instructions")){

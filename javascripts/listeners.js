@@ -24,16 +24,42 @@ function addListeners() {
             window.history.pushState('openModal', null, './more');
         });
 
+        let pushedState = false;
+
         $(window).on('popstate', function () {
-            $('.modal').modal('hide')
+            if (!pushedState) {
+                $('.modal:visible').each(function () {
+                    if (this.id === 'donorIdInput-dialog') {
+                        window.history.pushState('donorIdInput', null, './donorIdInput');
+                        pushedState = true;
+                    }
+                });
+                $('.modal:not(#donorIdInput-dialog)').modal('hide');
+            } else {
+                $('.modal').modal('hide');
+                pushedState = false;
+            }
         });
 
         $('.modal').on('hide.bs.modal', function (e) {
             if (window.history.state === "openModal") {
                 window.history.back()
+            } else if (window.history.state === "donorIdInput") {
+                window.history.back()
             }
         });
     }
+
+    $('#openDonorIdInput').click(function (e) {
+        e.preventDefault();
+        $('#consent-dialog').modal('hide');
+        $('#donorIdInput-dialog').modal('show');
+    });
+
+    $("#donationIdInput").on("change", (e) => {
+        let donorIdInput = e.target.value
+        $("#donorIdInputValue").attr('value', donorIdInput);
+    })
 
     $("#btn-fb-download-finished").on("click", function (e) {
         e.preventDefault(); d
@@ -129,7 +155,7 @@ function handleUnsupportedBrowsers() {
     var userAgent = navigator.userAgent.toLowerCase()
 
     // check if user is using IE as we know the site does not look correct
-    // code from https://stackoverflow.com/questions/19999388/check-if-user-is-using-ie
+    // code taken from https://stackoverflow.com/questions/19999388/check-if-user-is-using-ie
     if (userAgent.indexOf("MSIE") > -1 || userAgent.match(/Trident.*rv\:11\./)) {
         $("#unsupported-browser-warning").removeClass("d-none");
     }

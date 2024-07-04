@@ -7,6 +7,7 @@ DONOR_SURVEY_LINK: "https://www.soscisurvey.de/dona/"
 SOCIAL_DATA_INGESTION_ENABLED: true
 IMAGE_REPOSITORY: dona.tf.uni-bielefeld.de
 NUM_REPLICAS: 1
+DONOR_ID_INPUT_METHOD: "automatically"
 
 # for local only
 DATABASE_USER: user

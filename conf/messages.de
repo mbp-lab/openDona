@@ -76,6 +76,11 @@ instructions.download-procedure.title=Übersicht über den Download & Datenspend
 instructions.continue.body=Wenn Sie anhand dieser Anleitung Ihre Daten erhalten haben, können Sie jetzt mit der Einverständniserklärung und dem  Fragebogen beginnen. Im Anschluss können Sie dann Ihre Daten spenden.
 instructions.haveData=Sie brauchen 5-7 WhatsApp-Chats (.txt-Dateien).
 
+donorIdInput.title=ID-Eingabe
+donorIdInput.body=Bitte geben Sie Ihre ID ein, um fortzufahren:
+donorIdInput.nextButton=Weiter
+donorId.remember=Bitte notieren Sie sich Ihre ID:
+donorId.yourid=Ihre ID:
 
 # Donation info page
 

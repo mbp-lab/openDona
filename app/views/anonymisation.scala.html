@@ -1,6 +1,6 @@
 @import models.domain.DataSourceDescription
 
-@(form: Form[SocialDataForm.SocialFormData], donorId: String, dataSourceDescriptions: List[DataSourceDescription])(implicit request: RequestHeader, messages: Messages)
+@(form: Form[SocialDataForm.SocialFormData], donorId: String, dataSourceDescriptions: List[DataSourceDescription], donorIdMethod: String)(implicit request: RequestHeader, messages: Messages)
 
 @displayJsonParseError(maybeErrorString: Option[String]) = @{
     maybeErrorString match {
@@ -57,6 +57,14 @@
         data-error-not-enough-months="@messages("donation.errors.dates-not-enough-months")"
         >
         </div>
+        @if(donorIdMethod == "showid" || donorIdMethod == "manually") {
+            <div class="text-center mb-3">
+                @messages("donorId.yourid")
+                @{
+                    donorId
+                }
+            </div>
+        }
         <div class=" w-100" id="anonymizationTextHeadlines">
             <div class="headline text-center mb-3">@messages("donation.select-data.title")</div>
             <p class="paragraph"> @messages("donation.select-data.body1") </p>
@@ -308,62 +316,5 @@
         </div>
     </div>
 
-
-}
-
-@populateDataSourceList(dataSourceDescription: DataSourceDescription) = {
-
-    <div class="card">
-
-        <label class="card-header donation-file-selector btn btn-link w-100" >
-            <input id="@{
-                dataSourceDescription.name.toString
-            }"
-            multiple
-            type="file"
-            class="donation-file-selector d-none"
-                @if(dataSourceDescription.requiresAlias) {
-                    data-requires-alias="true"
-                }
-                @if(dataSourceDescription.parsingDetails.specificFileExtensionAccepted.isDefined) {
-                    accept="@{
-                        dataSourceDescription.parsingDetails.specificFileExtensionAccepted
-                    }"
-            }
-            />
-            <span id="@{
-                dataSourceDescription.name.toString
-            }SelectText">
-                @if(dataSourceDescription.logo.isDefined) {
-                    <img class="logo mr-3" src="@{
-                        dataSourceDescription.logo
-                    }">
-                }
-                <span>@{
-                    dataSourceDescription.name.toString
-                }</span>
-            </span>
-
-            <input id="@{
-                dataSourceDescription.name
-            }AliasInput"
-            type="text"
-            minlength="0"
-            maxlength="100"
-            size="12"
-                @if(dataSourceDescription.requiresAlias) {
-                    placeholder="@messages("donation.alias")"
-                    class="ml-5 mbt-2 w-25"
-                    data-toggle="tooltip"
-                    data-placement="auto"
-                    title="@messages("donation.errors.no-alias")"
-                } else {
-                    placeholder="@messages("donation.alias-not-required")"
-                    disabled="true"
-                    class="ml-5 mbt-2 w-25 disabled-input"
-                    }
-            >
-        </label>
-    </div>
 
 }

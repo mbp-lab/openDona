@@ -60,6 +60,8 @@ spec:
           value: "${DONOR_SURVEY_LINK}"
         - name: SOCIAL_DATA_INGESTION_ENABLED
           value: "${SOCIAL_DATA_INGESTION_ENABLED}"
+        - name: DONOR_ID_INPUT_METHOD
+          value: "${DONOR_ID_INPUT_METHOD}"
         name: kalinka
         image: "${IMAGE_REPOSITORY}${APP}:${GIT_COMMIT_ID}"
         imagePullPolicy: IfNotPresent

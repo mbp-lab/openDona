@@ -1,6 +1,6 @@
 @import models.domain.DataSourceDescription
 
-@(dataSourceDescriptions: List[DataSourceDescription])(implicit request: RequestHeader, messages: Messages)
+@(dataSourceDescriptions: List[DataSourceDescription], donorIdMethod: String)(implicit request: RequestHeader, messages: Messages)
 
 
 @mainNew("Dona - ForMe")(){
@@ -14,8 +14,11 @@
         </div>
         <p class="paragraph">@messages("instructions.continue.body")</p>
     </div>
-    <div class="modal" id="consent-dialog"  role="dialog">
-    @consent()
+    <div class="modal" id="consent-dialog"  role="dialog" tabindex="-1">
+    @consent(donorIdMethod)
+    </div>
+    <div class="modal" id="donorIdInput-dialog"  role="dialog" tabindex="-1">
+    @donorIdInputModal(donorIdMethod)
     </div>
     <div class="mt-5">
     @footer(title = Some(messages("footer.title")), previousLink = Some("/")){

@@ -1,5 +1,6 @@
 package controllers
 
+import javax.inject.Inject
 import akka.http.scaladsl.model.Uri
 import config.{FeedbackConfig, SurveyConfig}
 import models.api.{Conversation, ConversationMessage, ConversationMessageAudio, SocialData}
@@ -15,12 +16,13 @@ import play.api.test._
 import scalaz.EitherT
 import scalaz.Scalaz._
 import services.{Feature, FeatureFlagService, InMemoryDataSourceDescriptionService, MessageAnalysisService, SocialDataService}
+import play.api.Configuration
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
 import scala.concurrent.Future
 
-class SocialDataDonationControllerSpec extends PlaySpec with Mockito {
+class SocialDataDonationControllerSpec @Inject()(config: Configuration) extends PlaySpec with Mockito {
 
   private val fakeDonorId = "dummy-id"
   private val fakeSurveyUrl = Uri("https://survey.com/survey")
@@ -168,13 +170,14 @@ class SocialDataDonationControllerSpec extends PlaySpec with Mockito {
     mockSocialDataService.saveData(any[SocialData]).returns(EitherT.rightT(Future.unit))
 
     val mockService = mock[DonationService]
-    mockService.beginOnlineConsentDonation().returns(Future.successful { ExternalDonorId(fakeDonorId) })
+    mockService.beginOnlineConsentDonation("", "default").returns(Future.successful(Right(ExternalDonorId(fakeDonorId))))
 
     val controller =
       new SocialDataDonationController(
         mockSocialDataService,
         mockService,
         SurveyConfig(fakeSurveyUrl, isSurveyEnabled),
+        config = config,
         stubControllerComponents(),
         new MessageAnalysisService(FeedbackConfig(1.day, 1000)),
         new InMemoryDataSourceDescriptionService()
